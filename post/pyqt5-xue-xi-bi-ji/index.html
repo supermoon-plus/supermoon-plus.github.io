@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>PyQt5 学习笔记 | My Blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://supermoon-plus.github.io/favicon.ico?v=1673080088688">
+<link rel="stylesheet" href="https://supermoon-plus.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="PyQt5 学习笔记
+
+
+Python Qt官方文档 - 控件部分
+【白月黑羽】Qt图形界面 图文教程合集
+作者视频
+https://www.bilibili.com/video/BV1Zf4y1W79o?p=1
+
+【注意事项】 缩进 Ta..." />
+    <meta name="keywords" content="Python,PyQT5,Gui,note" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://supermoon-plus.github.io">
+        <img src="https://supermoon-plus.github.io/images/avatar.png?v=1673080088688" class="site-logo">
+        <h1 class="site-title">My Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/supermoon-plus" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Hi, I am now learning create a Blog, Write Notes and log.
+    </div>
+    <div class="site-footer">
+      print("Hello World") # Updata From 2023年1月6日 | <a class="rss" href="https://supermoon-plus.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">PyQt5 学习笔记</h2>
+            <div class="post-date">2023-01-04</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="pyqt5-学习笔记">PyQt5 学习笔记</h1>
+<figure data-type="image" tabindex="1"><img src="https://img1.baidu.com/it/u=3216217160,2527333825&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=589" alt="" loading="lazy"></figure>
+<hr>
+<p><a href="https://doc.qt.io/qtforpython-5.12/PySide2/QtWidgets/index.html#module-PySide2.QtWidgets">Python Qt官方文档 - 控件部分</a></p>
+<p><a href="https://www.byhy.net/tut/py/gui/qt_05_1/">【白月黑羽】Qt图形界面 图文教程合集</a></p>
+<p><a href="https://www.bilibili.com/video/BV1Zf4y1W79o?p=1">作者视频</a></p>
+<p>https://www.bilibili.com/video/BV1Zf4y1W79o?p=1</p>
+<hr>
+<h1 id="注意事项-缩进-tab-与-空格-互斥">【注意事项】 缩进 Tab 与 空格 互斥</h1>
+<blockquote>
+<p>本文的代码示例，缩进是Tab，而IDE缩进为4空格，可能冲突报错，自行替换成<strong>四个空格</strong></p>
+</blockquote>
+<hr>
+<h3 id="通用示例">通用示例：</h3>
+<pre><code class="language-python">button.setText(text) # 改变 按钮/line行输入框 的文本，传入字符串
+
+button.setEnabled(True) # 启用  某个控件，所有继承自QWidget类控件，都支持。
+button.setEnabled(False) # 禁用  某个控件，禁用后用户不可操作。
+
+# ↓ 修改某个控件颜色，传入'red', 'blue', #72a771; 等参数,留空恢复默认
+self.button.setStyleSheet('background-color: #72a771;') # 背景颜色
+self.setWindowIcon(QIcon('./Icon/cat.ico')) # 初始化窗口logo图标ico格式
+
+# .ui转.py 在ui目录运行cmd，-x是生成if_name_测试代码,http://t.csdn.cn/GRG7D
+pyuic5 test.ui -o test.py -x
+
+self.button.setToolTip('这是一个&lt;b&gt;按钮哦~~&lt;/b&gt;') # 给某个控件添加悬停提醒气泡
+
+</code></pre>
+<hr>
+<h2 id="按钮-qpushbutton">按钮 <code>QPushButton</code></h2>
+<pre><code class="language-python">button1.setText('按钮1') # 修改按钮的文本 传入字符串
+
+button1.clicked.connect(self.function) # 当按钮被按下，则执行某个函数
+button1.clicked.connect(lambda: self.function('123')) # 函数需传参时用lambda表达式
+self.close() # 关闭程序
+
+</code></pre>
+<hr>
+<h2 id="单行文本框-qlineedit">单行文本框 <code>QLineEdit</code></h2>
+<figure data-type="image" tabindex="2"><img src="https://doc.qt.io/qtforpython/_images/windows-lineedit.png" alt="" loading="lazy"></figure>
+<pre><code class="language-python">self.line.text() # 读取文本框的内容
+self.line.setText(text) # 把内容写入到文本框内
+# 冷门功能 ↓ 
+self.line.clear() # 清除文本框的内容
+self.line.copy() # 只复制 选中文本 的内容
+self.line.paste() # 把剪贴板的内容，粘贴在文本框的光标处
+self.line.setPlaceholderText('请在这里输入URL') # 文本框显示提示内容
+
+self.line.textChanged.connect(self.function) # 文本框被编辑, 则调用函数
+def function（self, text): # 同上，回调函数会传入文本框的内容，用text接收可直接print。
+	print(text) 
+	# 可用于检测填入内容，如邮箱手机号等。用法：填处理函数，在函数内用setText获取文本并处理。
+
+</code></pre>
+<hr>
+<h2 id="多行纯文本框-qplaintextedit">多行纯文本框 <code>QPlainTextEdit</code></h2>
+<p>纯文本与 QTextEdit 不同，TextEdit 是富文本框，可以修改加粗、颜色、字体、字号等等内容。</p>
+<pre><code class="language-python">self.edit.toPlainText() # 获取编辑框内的文本内容
+self.edit.setPlainText(text) # 把内容写入到文本框内，覆盖，之前内容会清除
+self.edit.insertPlainText('这是在光标插入的信息') # 在光标处插入文本，不换行
+self.edit.appendPlainText('你好，这是新加入的消息') # 在末尾添加文本，自动换行
+
+self.edit.setPlaceholderText('请在这里输入薪资表...') # 纯文本框 没消息时的提示消息
+self.selection = self.edit.textCursor().selectedText() # 获取选中文本
+edit.cursorPositionChanged.connect(self.function) # 信号，当文本框光标改变时
+edit.textChanged.connect(self.function) # 信号，当文本被修改时
+
+</code></pre>
+<p>self.edit.clear() # 清除文本框的内容<br>
+self.edit.copy() # 只复制 选中文本 的内容<br>
+self.edit.paste() # 把剪贴板的内容，粘贴在文本框的光标处<br>
+self.edit.textChanged.connect(self.function) # 当文本框内容被编辑则调用函数<br>
+edit.document().setMaximumBlockCount(100) # 最大行数，超过则删除前面内容，防占用</p>
+<pre><code>
+---
+## 文本浏览框 `QTextBrowser`
+
+`QTextBrowser` 是 `只能查看文本` 控件。
+通常用来显示一些操作日志信息、或者不需要用户编辑的大段文本内容。
+该控件获取文本、修改、清除、剪贴板复制粘贴 等等， 都和上面纯文本框是一样的。
+
+不同的地方：
+```python
+edit.append('你好，白月黑羽') # 在编辑框末尾添加文本内容
+edit.insertPlainText('你好，白月黑羽') # 在编辑框末尾添加文本内容，不换行
+
+def print_logo(self,test): # 打印logo日志, 传入字符串，并显示新消息
+	self.print_logo.append(test) # 把内容添加到日志框
+	self.print_logo.ensureCursorVisible() # 自动翻滚文本框，显示新添加的消息
+</code></pre>
+<hr>
+<h2 id="标签-qlabel">标签 <code>QLabel</code></h2>
+<p>常见的标签，可以显示文字（包括纯文本和富文本）、图片 甚至动画。<br>
+插入图片在 Qlabel - pixmap 内可选择图片路径。<br>
+<code>button.setText(text) # 修改标签文本内容</code></p>
+<hr>
+<h2 id="选择文件-选择文件夹-qfiledialog">选择文件 / 选择文件夹 <code>QFileDialog</code></h2>
+<p>选择文件或者目录<br>
+<code>getExistingDirectory</code> 选择目录，字符串。<br>
+<code>getOpenFileName</code> 选择单个文件，字符串。<br>
+<code>getOpenFileNames</code> 选择 单个/多个 文件，返回列表。</p>
+<pre><code class="language-python">image_file, _ = QFileDialog.getOpenFileName(self,'选择文件', './','选择图片 (*.jpg*.png *.jpeg)') # 传参（self父类，选择框标题，起始目录'D://'，说明+格式要求）
+# 选择单个文件，返回两个参数，字符串，取消不选则为''空，
+
+image_files, _ = QFileDialog.getOpenFileNames(self,'选择单个或多个文件', './','选择图片 (*.jpg*.png *.jpeg)') # 同上，# 选择单个/多个文件，返回两个参数，接收内容为列表，取消不选则为[]空列表
+
+image_dir = QFileDialog.getExistingDirectory(self,'选择文件夹', './') # 标题、路径
+# 选择文件夹，返回文件夹路径字符串，取消不选则为''空
+
+save_path, _ = QFileDialog.getSaveFileName(self, &quot;选择保存文件路径&quot;, './', '保存格式 (*.txt *.mpr)') # 选择保存路径, return返回选择路径，字符串，如'D:/aa/t1.txt'，取消为''空
+
+# 在 我的模板 里有详细的完成的函数
+</code></pre>
+<hr>
+<h2 id="下拉框-组合选择框-qcombobox">下拉框 / 组合选择框 <code>QComboBox</code></h2>
+<p>组合选择框，下拉框。 <a href="https://doc.qt.io/qtforpython-5.12/PySide2/QtWidgets/QComboBox.html">官网介绍</a></p>
+<pre><code class="language-python">mode = cbox.currentText() # 获取当前选项的 文本/内容
+
+cbox.addItem('选项x') # 在末尾，新增一个选项
+cbox.addItems(['byhy','白月黑羽','python教程']) # 在末尾，新增多个选项
+cbox.removeItem(index) # 删除某一个选项，传入选项的索引
+cbox.clear() # 清空/删除 全部所有选项
+cbox.currentIndexChanged.connect(self.function) # 信号，当选项改变时执行函数
+</code></pre>
+<hr>
+<h2 id="单选按钮-qradiobutton">单选按钮 <code>QRadioButton</code></h2>
+<figure data-type="image" tabindex="3"><img src="https://cdn2.byhy.net/imgs/gh/36257654_69709779-0a30cd80-1139-11ea-8ac6-eb19387ad278.png" alt="image" loading="lazy"></figure>
+<p><code>同一个父窗口</code> 里面的多个按钮，只能选中一项。<br>
+如果你有多组单选按钮， 每组都应该有不同的父控件，或者不同的Layout。<br>
+<strong>建议：</strong> 把每一组单选按钮，放到不同的按钮组，右键分组。 <a href="https://www.bilibili.com/video/BV1cJ411R7bP?p=12">作者视频讲解</a></p>
+<pre><code class="language-python"># 示例： 创建了两个按钮，猫和狗，放进了叫 cat_dog 的按钮组
+self.cat_dog.buttonClicked.connect(self.function) # 信号，点击任意按钮 调用函数
+txt = self.cat_dog.checkedButton().text() # 获取按钮组里，选项的文本，字符串
+</code></pre>
+<hr>
+<h2 id="勾选按钮-qcheckbox">勾选按钮 <code>QCheckBox</code></h2>
+<figure data-type="image" tabindex="4"><img src="https://cdn2.byhy.net/imgs/gh/36257654_69712525-f3d94080-113d-11ea-87f7-473072834121.png" alt="image" loading="lazy"></figure>
+<p>同上，多个按钮，放进一个按钮组里，默认为单选，使用方法和效果 同上 ↑</p>
+<p>多选模式，需要注意<br>
+在 Qt设计师编辑器中，可以设置 按钮组 的 <code>exclusive</code> 属性，√为单选，X为多选</p>
+<pre><code class="language-python"># 示例：创建多个勾选按钮，并放进 buttonGroup_feizai 按钮组
+self.buttonGroup_feizai.buttonClicked.connect(self.function) # 信号 调用函数
+# 单选模式
+txt = self.buttonGroup_feizai.checkedButton().text() # 按钮组单选，读取按钮组的结果
+
+# 多选模式，手动查询每个按钮，勾选时为True，不勾为False
+print(self.checkBox_1.isChecked()) # 查询按钮状态，勾True，不勾False
+print(self.checkBox_2.isChecked())
+
+# 多选模式下，不能用单选的方式，不勾时返回None，无法做判断
+</code></pre>
+<hr>
+<h2 id="进度条-qprogressbar">进度条 <code>QProgressBar</code></h2>
+<p>进度条是一个常用的控件，当程序需要做一件比较耗费时间的任务（比如统计数据，下载文件等），可以用来向用户指示操作的进度。</p>
+<p>放在循环中，但是当处理时间很长，如超过10秒，防止未响应，最好是在多线程运行</p>
+<pre><code class="language-python">self.progressBar.setRange(0,10) # 设定进度的步数，起始和结束
+self.progressBar.setValue(3) # 更新进度到哪一步
+self.progressBar.reset() # 重置进度条
+</code></pre>
+<hr>
+<h2 id="表格控件-qtablewidget">表格控件 <code>QTableWidget</code></h2>
+<p><a href="https://www.byhy.net/tut/py/gui/qt_05_2/#%E8%A1%A8%E6%A0%BC">【文章介绍】</a></p>
+<pre><code class="language-python">txt = self.excel.item(0,0).text() # 获取单元格的文本内容，参数为 行/列 索引
+# 注意索引列表不存在则报错，规避
+
+self.excel.setItem(1, 1, QTableWidgetItem('白月黑羽')) # ↓ 新增/修改表格内容。传入 行/列 的索引，和表格实例化后的内容。索引与表格不符则跳过不报错
+self.excel.item(0,0).setText('江老师') # 修改表格已有内容。传入行/列索引，索引无效则报错
+
+# 行列数量 读取/修改，删除表格内容
+rowcount = self.excel.rowCount() # 获取表格所有的 行数
+rowcount = self.excel.columnCount() # 获取表格所有的 列数
+currentrow = table.currentRow() # 获取当前选中是第几行 (索引), 方便在表格中间插入新行
+self.excel.setRowCount(10) # 设置修改 表格行数
+self.excel.setColumnCount(10) # 设置修改 表格列数
+self.excel.clearContents() # 删除表格所有内容，但表格行列还在，删除用setRowCount
+
+self.excel.horizontalHeader().setStretchLastSection(True) #最后列贴边不留空
+# 或者在Qt设计师编辑器内，表格控件属性里，勾选 HorizontalHeaderStretchLastSection
+
+self.excel.cellChanged.connect(self.function) # 信号，当表格内容改变时调用函数
+def function(self, row, columu): # 回调函数，返回行列索引
+	print(f'第{row}行，第{columu}列，内容被修改')
+
+# 只有列的表格：
+# 表格每列的宽度，默认100，传入列的索引和宽度
+self.excel.horizontalHeader().resizeSection(0,150)
+self.excel.horizontalHeader().resizeSection(1,100)
+# 插入显示至表格，传入二维列表，如[[1,2,3],[4,5,6],] 只有一个列表需写成 [[1,2,3],] 
+def input_excel(self, lists): 
+	for i in range(len(lists)):
+		item = lists[i]
+		row = self.excel.rowCount()
+		self.excel.insertRow(row)
+		for j in range(len(item)):
+			item = QTableWidgetItem(str(lists[i][j]))
+			self.excel.setItem(row,j,item)
+
+</code></pre>
+<hr>
+<h2 id="日期控件-qdateedit">日期控件 <code>QDateEdit</code></h2>
+<p>QDate 对象的具体说明<a href="https://doc.qt.io/qtforpython-5.12/PySide2/QtCore/QDate.html">参考官方文档</a></p>
+<pre><code class="language-python">
+qdate = self.dateEdit.date()
+qdate.toString('yyyy-MM-dd') # 获取控件内容，并转换成指定格式
+# 年月日
+year = qdate.year()   # 返回 2020
+month = qdate.month() # 返回 5
+day = qdate.day()     # 返回 2
+# 格式参考
+'yyyy-MM-dd dddd'=2000-01-01 星期六
+
+# 相关内容不太好找，已放弃摆烂
+
+</code></pre>
+<hr>
+<h2 id="pyqt5播放音频-csdn文章">PyQT5播放音频 <a href="http://t.csdn.cn/7zEqJ">CSDN文章</a></h2>
+<pre><code class="language-python">import time
+from PyQt5.QtCore import QUrl
+from PyQt5.QtMultimedia import QMediaContent, QMediaPlayer
+file = QUrl.fromLocalFile(&quot;E:\[音效素材]\鼓+锣-转场提示音效.wav&quot;) # 定义文件路径
+content = QMediaContent(file) # 创建 QMediaContent 对象
+player = QMediaPlayer() # 创建 QMediaPlayer 对象
+player.setMedia(content) # 设置媒体内容
+player.setVolume(50.0) # 设置音量
+player.play() # 播放音频
+time.sleep(2) # 程序暂停，不能低于音频时长
+</code></pre>
+<hr>
+<h2 id="拖拽文件至窗口获取文件路径">拖拽文件至窗口，获取文件路径</h2>
+<p>文章1 http://t.csdn.cn/okZdU<br>
+文章2 http://t.csdn.cn/h4JKK</p>
+<p>在Qt设计师编辑器中，大部分控件默认开启 <code>setAcceptDrops</code> 功能，拖拽时会导致重复获取，<br>
+可将无关控件的 <code>setAcceptDrops</code> 功能禁用。</p>
+<pre><code class="language-python">self.setAcceptDrops(True) # 初始化，# 调用Drops方法
+def dragEnterEvent(self, evn): # 当有文件拖入时执行该函数
+	self.setWindowTitle('鼠标拖入窗口了')
+	path_list = evn.mimeData().text().replace('file:///', '') # 获取拖入的文件内容
+	self.print_logo('文件路径：\n' + path_list)
+	# 鼠标放开函数事件
+	evn.accept()
+def dropEvent(self, evn): # 松开鼠标后执行
+	self.setWindowTitle('鼠标放开了')
+
+</code></pre>
+<h2 id="2纯文本输入框控件拖入文件获取路径">2.纯文本输入框控件，拖入文件，获取路径</h2>
+<p>有缺点，同时拖入多文件时会有奇奇怪怪的问题，只适合拖入单文件。（2022年12月18日）</p>
+<pre><code class="language-python">self.textEdit.textChanged.connect(self.editchange)
+def editchange(self):
+	if self.textEdit.toPlainText().find('file:///') &gt;= 0: # 
+		path_name = self.textEdit.toPlainText().replace('file:///', '')
+		self.textEdit.setPlainText(path_name + '\n')
+</code></pre>
+<hr>
+<hr>
+<blockquote>
+<p>未完待续...</p>
+</blockquote>
+<hr>
+<p>PyQt5 运行ui模板</p>
+<pre><code class="language-python"># -*- coding: utf-8 -*-
+# https://www.cnblogs.com/linyfeng/p/11832237.html
+
+import sys
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QColor, QBrush, QIcon
+from UI_Windows import * # 导入UI
+
+class MyMainForm(QMainWindow, Ui_MainWindow):
+    def __init__(self, parent=None):
+        super(MyMainForm, self).__init__(parent)
+        self.setupUi(self)
+if __name__ == &quot;__main__&quot;:
+    app = QApplication(sys.argv)
+    myWin = MyMainForm()
+    myWin.show()
+    sys.exit(app.exec_())
+</code></pre>
+<hr>
+<p>笔记时间：<br>
+2022年12月9日下午晚上 创建<br>
+2022年12月10日05:37:08 完成大部分</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://supermoon-plus.github.io/tag/c1GkpXjiw/" class="tag">
+                    Python
+                  </a>
+                
+                  <a href="https://supermoon-plus.github.io/tag/Z4CoJ7LFwB/" class="tag">
+                    PyQT5
+                  </a>
+                
+                  <a href="https://supermoon-plus.github.io/tag/DAbSx6QUrp/" class="tag">
+                    Gui
+                  </a>
+                
+                  <a href="https://supermoon-plus.github.io/tag/VRUljCMyxJ/" class="tag">
+                    note
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://supermoon-plus.github.io/post/conda-chang-yong-ming-ling-md/">
+                  <h3 class="post-title">
+                    Conda常用命令.md
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
