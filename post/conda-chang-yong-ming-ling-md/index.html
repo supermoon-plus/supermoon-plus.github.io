@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Conda常用命令.md | My Blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://supermoon-plus.github.io/favicon.ico?v=1681544735614">
+<link rel="stylesheet" href="https://supermoon-plus.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="Miniconda 官网下载， https://docs.conda.io/en/latest/miniconda.html
+手动添加环境变量，打开设置，搜索 path，系统变量 - path ，手动新建
+D:\miniconda3
+D:\..." />
+    <meta name="keywords" content="conda,Python,note" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://supermoon-plus.github.io">
+        <img src="https://supermoon-plus.github.io/images/avatar.png?v=1681544735614" class="site-logo">
+        <h1 class="site-title">My Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/supermoon-plus" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Hi, I am now learning create a Blog, Write Notes and log.
+    </div>
+    <div class="site-footer">
+      print("Hello World") # Updata From 2023年1月6日 | <a class="rss" href="https://supermoon-plus.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Conda常用命令.md</h2>
+            <div class="post-date">2023-01-04</div>
+            
+            <div class="post-content" v-pre>
+              <p>Miniconda 官网下载， https://docs.conda.io/en/latest/miniconda.html</p>
+<p>手动添加环境变量，打开设置，搜索 path，系统变量 - path ，手动新建</p>
+<p><code>D:\miniconda3</code><br>
+<code>D:\miniconda3\Library\bin</code><br>
+<code>D:\miniconda3\Scripts</code></p>
+<p>未完待续</p>
+<h3 id="conda-第三方库命令-csdn-文章">Conda 第三方库命令 / <a href="http://t.csdn.cn/BgOeO">CSDN 文章</a></h3>
+<pre><code class="language-python">conda install xxx
+#安装第三方库，（在当前环境下）conda install xxx=2.1 #可指定版本号
+
+pip install -r requirements.txt
+# 在某个目录下，执行安装，用CD C:\ 命令进入目录
+
+conda install xxx -i 源名称或链接 # 指定下载源
+conda install opencv-python -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+conda uninstall xxx
+# 卸载第三方库
+
+conda list # 查看当前环境中，第三方库列表
+
+</code></pre>
+<h3 id="conda-环境篇">conda 环境篇</h3>
+<pre><code class="language-python">conda activate python38
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+conda activate python38
+#激活 / 进入到 python38 这个虚拟环境
+
+conda create -n python38 python==3.8.15
+#创建叫python38的环境
+
+conda remove -n python38 --all
+#删除叫python38的环境
+
+python --version
+# 查看当前环境的python版本
+
+conda env list
+# 虚拟环境列表，总共创建了哪些虚拟环境
+
+nvidia-smi # 查看显卡驱动版本
+
+
+import torch
+torch.__version__
+'1.13.1+cu117'
+torch.cuda.is_available()
+True
+# 检测torch、CUDA环境
+
+
+</code></pre>
+<h3 id="注意事项">注意事项：</h3>
+<ul>
+<li>Conda 需要提前设置好国内下载源 <a href="http://t.csdn.cn/HqvHh">CSDN Link</a></li>
+<li>WARNING:Ignore 报错时，修改系统默认 UTF-8 编码 <a href="http://t.csdn.cn/Qkv0c">CSND Link</a></li>
+<li></li>
+</ul>
+<hr>
+<h4 id="旧版为大家整理了一些常用的-conda-命令-bili-video">【旧版】为大家整理了一些常用的 conda 命令：  <a href="https://www.bilibili.com/video/BV1PT4y1i7qt">Bili Video</a></h4>
+<pre><code class="language-python">1. conda --version #查看conda版本，验证是否安装
+2. conda update conda #更新至最新版本，也会更新其它相关包
+3. conda update --all #更新所有包
+4. conda update package_name #更新指定的包
+conda env list # 查看当前存在哪些虚拟环境
+
+5. conda create -n env_name package_name
+#创建名为env_name的新环境，并在该环境下安装名为package_name 的包，
+#可以指定新环境的版本号，
+#例如：conda create -n python2 python=python2.7 numpy pandas，
+#创建了python2环境，python版本为2.7，同时还安装了numpy pandas包
+
+6. source activate env_name #切换至env_name环境
+7. source deactivate #退出环境
+8. conda info -e #显示所有已经创建的环境
+9. conda create --name new_env_name --clone old_env_name 
+#复制old_env_name为new_env_name
+10. conda remove --name env_name –all #删除环境
+11. conda list #查看所有已经安装的包
+
+13. conda install --name env_name package_name #在指定环境中安装包
+14. conda remove -- name env_name package #删除指定环境中的包
+15. conda remove package #删除当前环境中的包
+16. conda env remove -n env_name #采用第10条的方法删除环境失败时，可采用这种方法
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://supermoon-plus.github.io/tag/jjF6L4KZ0/" class="tag">
+                    conda
+                  </a>
+                
+                  <a href="https://supermoon-plus.github.io/tag/c1GkpXjiw/" class="tag">
+                    Python
+                  </a>
+                
+                  <a href="https://supermoon-plus.github.io/tag/VRUljCMyxJ/" class="tag">
+                    note
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://supermoon-plus.github.io/post/an-jian-jing-ling-dai-ma-ji-md/">
+                  <h3 class="post-title">
+                    按键精灵-代码集md
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

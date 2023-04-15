@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>嵌入式My_python_DIYembed | My Blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://supermoon-plus.github.io/favicon.ico?v=1681544735614">
+<link rel="stylesheet" href="https://supermoon-plus.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="Python程序/脚本，如何打包发布？
+【DIY Pyinstaller embed】 自定义更方便快捷的 Python嵌入式打包程序
+根据Python嵌入式版本embeddable，搭配PyStand，自定义一个更加方便快捷的Python..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://supermoon-plus.github.io">
+        <img src="https://supermoon-plus.github.io/images/avatar.png?v=1681544735614" class="site-logo">
+        <h1 class="site-title">My Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/supermoon-plus" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Hi, I am now learning create a Blog, Write Notes and log.
+    </div>
+    <div class="site-footer">
+      print("Hello World") # Updata From 2023年1月6日 | <a class="rss" href="https://supermoon-plus.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">嵌入式My_python_DIYembed</h2>
+            <div class="post-date">2023-01-06</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="python程序脚本如何打包发布">Python程序/脚本，如何打包发布？</h1>
+<h2 id="diy-pyinstaller-embed-自定义更方便快捷的-python嵌入式打包程序">【DIY Pyinstaller embed】 自定义更方便快捷的 Python嵌入式打包程序</h2>
+<p>根据Python嵌入式版本embeddable，搭配PyStand，自定义一个更加方便快捷的Python打包程序。</p>
+<h3 id="参考资料">参考资料：</h3>
+<ol>
+<li>知乎韦易笑大佬的开源嵌入式Python启动器：PyStand  <a href="https://www.zhihu.com/question/48776632/answer/2336654649">【知乎文章】</a> / <a href="https://github.com/skywind3000/PyStand">【GitHub】</a></li>
+<li>embeddable版Python的内容参考了up主B-E-MAKE <a href="https://www.bilibili.com/video/BV1684y1z7Nj">【视频】</a></li>
+</ol>
+<hr>
+<h1 id="常见的-python打包方式">常见的 Python打包方式</h1>
+<h3 id="1python嵌入式打包"><strong>1.【Python嵌入式打包】</strong></h3>
+<p><a href="https://www.bilibili.com/video/BV1684y1z7Nj">【视频】</a>-<a href="https://www.cnblogs.com/BEMAKE/p/16806999.html">【图文教程文章】</a></p>
+<ol>
+<li>在Python官网下载 embeddable版本 32位 3.7/3.8版 <a href="https://www.python.org/downloads/windows/">【链接Link】</a></li>
+<li>解压zip文件</li>
+<li>下载<code>get-pip.py</code>文件，打开网站把内容复制粘贴到新建get-pip.py文件里保存，以<code>if --name--</code>结尾  <a href="https://bootstrap.pypa.io/get-pip.py">【链接Link】</a></li>
+<li>安装 pip包管理工具，约20MB 可不装，可在其他环境装了之后复制过去，节省空间。
+<ol>
+<li>在文件路径上输入cmd打开命令管理器，<code>python get-pip.py</code>运行，防止下载速度慢可以加上镜像源，如<code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>，执行后下载<code>Lib</code> <code>Scripts</code>等文件夹，第三方库保存在Lib文件夹内。(关闭代理)</li>
+<li><strong>直接将文件拖至解释器运行</strong>，拖动文件到python.exe上可以直接打开，更加简单快捷。</li>
+<li>使用BAT批处理, 一键安装/重装。（只要移动了文件夹/目录改变，执行pip会报错，需要安装/重装pip）<pre><code class="language-bat">@echo off
+chcp 65001
+.\python.exe .\get-pip.py
+</code></pre>
+</li>
+</ol>
+</li>
+<li>记事本打开<code>python3xx._pth</code> 删掉最后的#注释<code>#import site</code> 保存。# 否则无法正常使用pip</li>
+<li><strong>安装第三方库</strong>，进入Scripts文件夹，打开cmd，使用正常的pip安装命令即可，如<code>pip install numpy</code>, 文件会被安装在当前环境的<code>Lib\site-packages</code>文件夹内</li>
+<li><strong>运行程序</strong>：
+<ol>
+<li>在<code>python.exe</code>目录打开cmd，键入<code>python.exe demo.py</code>即可运行<code>demo.py</code></li>
+<li>使用BAT批处理程序调用<pre><code class="language-bat">@echo off
+chcp 65001
+.\runtime\python.exe .\demo.py
+</code></pre>
+</li>
+<li>使用知乎大佬的 PyStand启动器调用 ↓</li>
+</ol>
+</li>
+</ol>
+<h3 id="2pystand韦易笑大佬的嵌入式python启动器"><strong>2.【PyStand】韦易笑大佬的嵌入式Python启动器</strong></h3>
+<p><a href="https://www.zhihu.com/question/48776632/answer/2336654649">【知乎文章】</a> / <a href="https://github.com/skywind3000/PyStand">【GitHub】</a></p>
+<ol>
+<li>下载压缩包，解压 <a href="https://github.com/skywind3000/PyStand/releases">【GitHub releases Downlows】</a></li>
+<li><strong>第三方库</strong>，把电脑中相同的Python环境的库复制到<code>site-packages</code>(不过很容易漏掉，一个库通常包含多个文件夹)</li>
+<li>代码加密？ 加密方法见原作者描述</li>
+<li><strong>运行程序</strong>：
+<ul>
+<li>运行<code>PyStand.exe</code>程序会调用<code>runtime\python.exe</code>解释器运行与程序同名的<code>.int</code>文件，如<code>PyStand.int</code>，将py代码复制到<code>.int</code>文件内即可</li>
+<li>在cmd中运行<code>PyStand.exe</code>程序可以在黑框框显示<code>print</code>调试输出 和报错等内容，方便检查。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-pyinstaller">3. 【PyInstaller】</h3>
+<p>参考文章： <a href="https://zhuanlan.zhihu.com/p/470301078">【知乎】</a> / <a href="https://blog.csdn.net/hdudb/article/details/122055537">【CSDN过程+去坑】</a></p>
+<ol>
+<li>安装Pyinstaller，<code>pip install pyinstaller</code></li>
+<li>在<code>.py</code>文件的目录运行打开cmd命令窗口</li>
+<li>命令行窗口输入<code>pyinstaller demo.py</code>即可。<br>
+<strong>其中，可以填入的一些参数选项：</strong><br>
+<code>-F</code> 大写，是onefile，打包成单个独立exe程序<br>
+(本质上就是1个自解压程序，将整个Python解释器解压至temp缓存目录再运行，关闭后又删除如此反复，所以启动速度迟钝、慢半拍)<br>
+<code>-D</code> 大写,默认选项可不填。D是onedir，打包生成多个依赖文件和exe程序，放在一个文件夹内，略显凌乱，但启动速度快，可以在上层目录用 BAT调用程序启动。(或PyStand调用)<br>
+<code>-c</code> 显示命令行窗口<br>
+<code>-w</code> 不显示命令行窗口，去除黑框框<br>
+<code>-i</code> 修改生成exe程序的图标，ico格式尺寸16x16、32x32等<br>
+示例：<code>pyinstaller -w -i D:\123.ico demo.py</code></li>
+<li>其它可能会出现的问题，有些库可能打包不全，需要手动复制到文件夹内</li>
+</ol>
+<ul>
+<li>Pyinstaller + UPX 打包程序（不太重要） <a href="https://www.bilibili.com/video/BV1j341137De/">【相关视频】</a></li>
+</ul>
+<blockquote>
+<p>未完待续...</p>
+</blockquote>
+<hr>
+<h1 id="diy-pyinstaller-自制-python打包模板">【DIY Pyinstaller】 自制 Python打包模板！</h1>
+<h3 id="结合pystand和嵌入式-python自制python打包模板">结合<code>PyStand</code>和嵌入式 Python，自制Python打包模板</h3>
+<p>在使用了 <code>PyStand</code> 和 嵌入式Python之后，我发现可以把这两者结合起来！<br>
+<strong>本项目基于 <code>Python v3.8.8 embed</code> 嵌入式版制作</strong></p>
+<ul>
+<li>步骤：
+<ul>
+<li>进入<a href="https://www.python.org/downloads/windows/">python官网</a>下载  <code>embeddable</code>嵌入式Python、下载pip工具、移植Tkinter库...等等</li>
+<li>使用 <code>PyStand</code> 调用 <code>runtime</code> 文件夹内解释器, 去运行同级目录的同名int文件 <code>PyStand.int</code></li>
+<li>添加一些细节，可以方便后续开发 Python程序时，更加高效便捷！</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="造轮子使我快乐">造轮子使我快乐！！</h3>
+<hr>
+<hr>
+<h3 id="注意事项">注意事项：</h3>
+<ol>
+<li>为了更简单轻便，<code>PyStand.exe</code> 和 <code>run.BAT</code> 的启动方式，二选一即可，<code>PyStand.exe</code> 程序的注意事项请自行阅读原作者的文章 <a href="https://www.zhihu.com/question/48776632/answer/2336654649">【文章链接】</a></li>
+<li>请注意Python解释器为32位，有些库可能不兼容32位，需要64位请自行去Python官网下64位版的embeddable嵌入式版</li>
+<li>嵌入式版的Python压缩后大小为7M，解压后也仅十几M，我打包的包含了pip管理器和相关的库，以及PyQt5, 可自行删除。如<code>site-packages</code>和<code>Scripts</code>文件夹的内容。</li>
+<li>解压后，只要移动了文件夹/解释器目录改变了，执行pip时会报错，重装pip 可解决，建议创建bat批处理一键安装/重装。（见上面安装pip的第3个方法，已添加【一键安装】.bat批处理文件）</li>
+<li></li>
+</ol>
+<blockquote>
+<p>未完待续...</p>
+</blockquote>
+<hr>
+<h3 id="目前发现的问题">目前发现的问题：</h3>
+<ol>
+<li><s>（由于是嵌入式版的原因，Python并没有自带<code>Tkinter</code> 库/模块，尝试了很多种方法都不行，导致一些小脚本想做一个带小窗口界面不能用简单的TK库，只能使用PyQt5这种稍微复杂/繁琐/庞大的库，又多浪费了几十MB的空间...）</s><br>
+<strong>已解决</strong> 安装同版本同位数的install安装版，以<code>/</code>为根目录，将install版的 ↓<pre><code class="language-txt">/tcl 复制到嵌入式版的根目录 /
+/Lib/tkinter 复制到 /Lib/site-packages/
+/DLLs/_tkinter.pyd 复制到 /
+/DLLs/tcl86t.dll 复制到 /
+/DLLs/tk86t.dll 复制到 / 
+</code></pre>
+</li>
+<li></li>
+</ol>
+<blockquote>
+<p>欢迎反馈，未完待续...</p>
+</blockquote>
+<hr>
+<h3 id="在程序打包发布时可以删除减少容量大小的地方">在程序打包发布时，可以删除减少容量大小的地方：</h3>
+<p>Lib\site-packages 约20MB<br>
+这里面预先装了 pip包管理器和tkinter，视情况处理，均可删除</p>
+<p>tkinter库，约12MB<br>
+/tcl<br>
+/Lib/site-packages/tkinter<br>
+/_tkinter.pyd<br>
+/tcl86t.dll<br>
+/tk86t.dll<br>
+以/runtime为根目录，删除这五个文件、文件夹即可</p>
+<hr>
+<h3 id="我的打包文件下载">我的打包文件下载</h3>
+<ol>
+<li>在GitHub页面右边的 <strong>发行版Releases</strong></li>
+<li><a href="https://wwt.lanzoue.com/b021w3uxc">【蓝奏云·合集】</a> 密码:diy</li>
+</ol>
+<hr>
+<h3 id="更新日志倒序">更新日志：（倒序）</h3>
+<p>2022年10月26日 更新v1.2 发现改变目录后pip包管理工具会失效，则删除了相关文件，需要pip请运行【一键安装】.bat文件<br>
+2022年10月23日 更新v1.1 解决了无法使用tkinter的问题<br>
+2022年10月23日 发布在GitHub<br>
+2022年10月22日 创建</p>
+<hr>
+<h2 id="my-python-diyembed-demo">My-Python-DIYembed-demo</h2>
+<h3 id="自定义更方便快捷的python嵌入式打包程序">自定义更方便快捷的Python嵌入式打包程序</h3>
+<p>根据Python嵌入式版本embeddable，搭配PyStand，自定义一个更加方便快捷的Python打包程序。<br>
+<strong>本项目基于 <code>Python v3.8.8 embed</code> 嵌入式版制作</strong></p>
+<blockquote>
+<p>其他问题，请阅读 <a href="https://github.com/750ti/DIY-Pyinstaller-embed">README.md</a></p>
+</blockquote>
+<hr>
+<h2 id="版本说明">版本说明：</h2>
+<table>
+<thead>
+<tr>
+<th>版本号</th>
+<th>备注说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.2</td>
+<td>删减无效的pip包管理工具，新增pip说明和【一键安装】.bat</td>
+</tr>
+<tr>
+<td>Life 版</td>
+<td>保留Tkinter库，精简删除PyQt5（青春版）</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>更新支持Tkinter库</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>最初发布版 自带PyQt5模块</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://supermoon-plus.github.io/post/vscode-cha-jian-plugin_obsidian-cha-jian/">
+                  <h3 class="post-title">
+                    VSCode插件plugin_Obsidian插件
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>按键精灵-代码集md | My Blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://supermoon-plus.github.io/favicon.ico?v=1681544735614">
+<link rel="stylesheet" href="https://supermoon-plus.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+
+按键精灵-常用命令
+
+2022年6月5日 将旧笔记转写成MarkDown笔记，并且精简掉一些琐碎的内容
+
+简短草稿
+一行代码可以做什么？任意编辑网页
+document.body.contentEditable='true';
+
+关于投放..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://supermoon-plus.github.io">
+        <img src="https://supermoon-plus.github.io/images/avatar.png?v=1681544735614" class="site-logo">
+        <h1 class="site-title">My Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/supermoon-plus" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Hi, I am now learning create a Blog, Write Notes and log.
+    </div>
+    <div class="site-footer">
+      print("Hello World") # Updata From 2023年1月6日 | <a class="rss" href="https://supermoon-plus.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">按键精灵-代码集md</h2>
+            <div class="post-date">2023-01-04</div>
+            
+            <div class="post-content" v-pre>
+              <figure data-type="image" tabindex="1"><img src="https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/baike/s=250/sign=4e290e87e41190ef05fb95dafe1b9df7/314e251f95cad1c86c9a224d7c3e6709c93d51b3.jpg" alt="" loading="lazy"></figure>
+<hr>
+<h1 id="按键精灵-常用命令">按键精灵-常用命令</h1>
+<blockquote>
+<p>2022年6月5日 将旧笔记转写成MarkDown笔记，并且精简掉一些琐碎的内容</p>
+</blockquote>
+<h3 id="简短草稿">简短草稿</h3>
+<pre><code class="language-c">一行代码可以做什么？任意编辑网页
+document.body.contentEditable='true';
+
+关于投放超武坐标生成，现在有一个新思路
+可以使用等待任意键，判断上下左右的八个方向坐标
+自动生成一句坐标，比如→a→a，即：坐标向右并点投放
+（2021年8月18日00:19:19）已完成！2022年1月30日
+...
+
+</code></pre>
+<h2 id="代码集散">代码集散</h2>
+<pre><code class="language-c">
+Hwnd = Plugin.Window.Find(&quot;类名&quot;, &quot;记事本&quot;)
+// 传入类名和标题，str，填0为忽略，返回窗口句柄
+Call Plugin.Bkgnd.LeftClick(Hwnd句柄, 200, 100)
+// 后台鼠标点击，填入句柄和窗口相对坐标
+// 在抓抓可以看到窗口类名、标题，以及句柄，和相对坐标
+
+
+&quot;Attachment:\神盾.bmp&quot; //找图附件路径
+
+shubiao=WaitClick() // 等待鼠标按键，可用于启动后等特定的动作后，再进入脚本
+
+
+Dim x,y //定义变量
+
+GetCursorPos x, y // 把当前鼠标的位置，保存到坐标X，Y
+SaveMousePos // 保存当前鼠标位置
+RestoreMousePos // 恢复上次保存的鼠标位置
+
+Delay 200 //延迟200毫秒
+
+</code></pre>
+<h3 id="获取时间">获取时间</h3>
+<pre><code class="language-c">GetDateTime 获取系统日期和时间
+s=Plugin.Sys.GetDateTime()
+MessageBox &quot;您的操作系统日期和时间：&quot; &amp; s // 弹窗
+// 结果：2022-03-18 13:38:08
+
+</code></pre>
+<h2 id="找图">找图</h2>
+<pre><code class="language-c">// 区域找图，  // 把图片拖入附件
+FindPic 0, 0, 2560, 1440, &quot;Attachment:\神盾.bmp&quot;, 0.9, intX, intY
+If intX &gt; 0 And intY &gt; 0 Then // 判断是否找到
+// 这里写找到时的内容
+end if
+</code></pre>
+<h3 id="打开文件-程序-网页">打开文件、程序、网页</h3>
+<pre><code class="language-c">Call Lib.API.运行程序(&quot;D:\按键精灵生成.txt&quot;) // 打开软件、程序、文件等等
+
+RunApp &quot;D:\按键精灵-活跃日志.txt&quot; // 打开文件、文件夹 // 填文件、文件夹的绝对路径
+
+RunApp &quot;www.baidu.com&quot; // 打开网页
+</code></pre>
+<h3 id="写入文本">写入文本</h3>
+<pre><code class="language-c">SayString &quot;京东阿尔法&quot; // 前台输入，激活窗口生效
+
+Call Plugin.File.WriteFileEx(&quot;D:\按键精灵生成.txt&quot;, &quot;文本内容xxx&quot;)
+//填入绝对路径，后台写入txt文档末尾追加1行，这句不会覆盖原内容，并每句换行，方便写入log等
+
+</code></pre>
+<h3 id="字符串连接变量">字符串连接变量</h3>
+<pre><code class="language-c">// 使用 &amp; 可以把字符串和变量，连接起来，两边连接则需都加 &amp; 符号
+a=1
+b=2
+MessageBox &quot;X的坐标为&quot;&amp;a&amp;&quot;,Y的坐标为&quot;&amp;b // 弹出窗口
+SayString &quot;X的坐标为&quot;&amp;a&amp;&quot;,Y的坐标为&quot;&amp;b // 写入文本
+</code></pre>
+<h3 id="常见判断-循环">常见判断、循环：</h3>
+<pre><code class="language-c">// If判断：
+If i=5 Then
+Delay 100 // 判断为true时，执行的语句
+ElseIf // 可以继续添加 否则如果，再进行判断
+Else // Else否则，当判断为false 时，执行的语句，可以不加
+End If // 结束判断，一个完整的if判断，需要添加该结尾
+
+// Do 死循环
+Do
+Delay 100  // 循环内容
+Exit Do //  跳出死循环
+Loop
+// Do ... loop ，为死循环，只有exit do才可以跳出循环，需添加Loop作为结尾
+
+// For 计次循环
+For 5 // 次数
+Delay 100 // 内容
+Next // 结尾
+// For 是计次循环，常见For 5 循环5次，For i=1 to 10 循环 i 从1~10次，此时i为变量
+</code></pre>
+<h3 id="调试输出">调试输出</h3>
+<pre><code class="language-c">TracePrint “调试输出的内容！”
+// 跟 print打印相容，这里可以使用 &amp; 连字符 将字符串和变量链接，如计次，&quot;这是第&quot; &amp; a &amp; &quot;次的内容&quot;
+</code></pre>
+<h3 id="键盘按键-判断按键触发执行">键盘按键, 判断按键触发执行</h3>
+<pre><code class="language-c">key = WaitKey()  // key=键盘等待的任意按键
+if key = 49 then // 当按键key，=按键码时，按键码在【基本命令】-键盘命令里面有
+    Call 一键1冷酷
+end if
+//  [来源](https://tieba.baidu.com/p/2492519318)
+</code></pre>
+<h3 id="标记goto">【标记】Goto</h3>
+<pre><code class="language-c">Rem q //标记点Q，谨慎使用，容易出 bug
+if 判断条件 then
+执行语句
+Else
+Gotu Q // 回到标记点Q，类似死循环，通过则退出
+End If
+
+Goto 标记1
+TracePrint “打印或执行指令1”【调试输出】
+TracePrint “打印或执行指令2”
+Rem 标记1
+TraocePrint “打印或执行指令3”
+// 跳转指令，使用Goto可以忽略 指令1 / 指令2
+</code></pre>
+<h3 id="子程序-参考视频">【子程序】 <a href="https://www.bilibili.com/video/BV1aJ411v78m?p=5">参考视频</a></h3>
+<pre><code class="language-c">Sub 子程序
+// 程序执行的内容
+End Sub
+
+Call 子程序 //调用子程序, 类似函数，支持传递参数
+
+</code></pre>
+<h3 id="我的常用语句do循环早期版">我的常用语句：do循环：（早期版）</h3>
+<pre><code class="language-c">Do //（循环开始）
+IfColor 39, 1027, &quot;A05000&quot;, 0 Then
+// 判断：如果点（xx,xx）的颜色 0等于.1不等于“xxxx”则
+Exit Do // 跳出循环
+End If // 判断结束
+Loop // 循环
+Do
+IfColor 39, 1027, &quot;A05000&quot;, 0 Then
+Exit Do
+End If
+Loop
+// 其中 do loop 中间的命令会被无限循环， exit do 这个命令 会终止当前的do 循环，直接跳转到loop那行命令之后的命令
+
+// 讯迪打单脚本用的简单找色验证判断
+IfColor 4,1028,&quot;50A0&quot;,1 Then
+MessageBox &quot;登录错误：无效账户&quot;
+Else
+End If
+
+//如果点（xx,xx）的颜色 0等于1不等于“xxxx”则
+//弹出窗口“xxxxx”
+//否则
+//条件结束
+
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://supermoon-plus.github.io/post/python-chang-yong-dai-ma-md-ban/">
+                  <h3 class="post-title">
+                    Python常用代码命令
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

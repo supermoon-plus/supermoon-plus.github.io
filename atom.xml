@@ -1,0 +1,1677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://supermoon-plus.github.io</id>
+    <title>My Blog</title>
+    <updated>2023-04-15T07:45:58.229Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://supermoon-plus.github.io"/>
+    <link rel="self" href="https://supermoon-plus.github.io/atom.xml"/>
+    <subtitle>Hi, I am now learning create a Blog, Write Notes and log.</subtitle>
+    <logo>https://supermoon-plus.github.io/images/avatar.png</logo>
+    <icon>https://supermoon-plus.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, My Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Gridea 搭建博客Blog]]></title>
+        <id>https://supermoon-plus.github.io/post/gridea-da-jian-bo-ke-blog/</id>
+        <link href="https://supermoon-plus.github.io/post/gridea-da-jian-bo-ke-blog/">
+        </link>
+        <updated>2023-03-29T08:49:15.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>2023年1月5日00:18:41</p>
+</blockquote>
+<hr>
+<h1 id="1-注册github">1. 注册GitHub</h1>
+<ol>
+<li>注册GitHub</li>
+<li>创建公开仓库，仓库名为 <code>User.github.io</code> 其中 <code>user</code> 为你的GitHub账号名称,</li>
+<li>打开设置-&gt;开发者设置-&gt;个人访问令牌-&gt;令牌经典-&gt;生成新的令牌，勾选全部权限选择到期时间，并记录Token 令牌</li>
+<li>下载/安装 <code>Gridea</code> ，<a href="https://gridea.dev/">【官网链接】</a> ， 填入域名和仓库名称均为 <code>xx.github.io</code> 主分支main，仓库用户名为GitHub名称，填入注册GitHub的邮箱，填入令牌，代理Direct直连 Provy代理，保存、检测链接、同步即可访问。</li>
+<li><a href="https://gridea.dev/themes">【官网主题/皮肤】</a> , 点开皮肤的GitHub链接，下载代码zip，解压至源文件的 <code>themes</code> 文件夹内，重启 Gridea 即可读取皮肤主题</li>
+</ol>
+<p>在提交同步之后，刷新网页可能没反应，刷新DNS缓存即可<br>
+候在 <code>cmd</code> 中键入 <code>ipconfig /flushdns</code></p>
+<h2 id="主题皮肤">主题皮肤</h2>
+<p>Gridea 主题 Lemon<br>
+https://github.com/Mrcxt/gridea-theme-lemon</p>
+<p>Gridea 主题 Simple<br>
+https://github.com/getgridea/gridea-theme-simple</p>
+<p>自制的一款免费的Gridea主题 Gridea-theme-clean  <a href="https://kveln.cn/">预览</a><br>
+https://github.com/Alanrk/Gridea-theme-clean</p>
+<p>Pure, 示例站点：<a href="https://imhanjie.com/">https://imhanjie.com/</a><br>
+https://github.com/imhanjie/gridea-theme-pure</p>
+<p>https://github.com/alterfang/gridea-theme-bitcron</p>
+<p>https://github.com/Anakinliu/gridea-theme-tm</p>
+<p>https://github.com/NeedQuiet/Gridea-theme-concise</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[嵌入式My_python_DIYembed]]></title>
+        <id>https://supermoon-plus.github.io/post/qian-ru-shi-my_python_diyembed/</id>
+        <link href="https://supermoon-plus.github.io/post/qian-ru-shi-my_python_diyembed/">
+        </link>
+        <updated>2023-01-06T14:57:50.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="python程序脚本如何打包发布">Python程序/脚本，如何打包发布？</h1>
+<h2 id="diy-pyinstaller-embed-自定义更方便快捷的-python嵌入式打包程序">【DIY Pyinstaller embed】 自定义更方便快捷的 Python嵌入式打包程序</h2>
+<p>根据Python嵌入式版本embeddable，搭配PyStand，自定义一个更加方便快捷的Python打包程序。</p>
+<h3 id="参考资料">参考资料：</h3>
+<ol>
+<li>知乎韦易笑大佬的开源嵌入式Python启动器：PyStand  <a href="https://www.zhihu.com/question/48776632/answer/2336654649">【知乎文章】</a> / <a href="https://github.com/skywind3000/PyStand">【GitHub】</a></li>
+<li>embeddable版Python的内容参考了up主B-E-MAKE <a href="https://www.bilibili.com/video/BV1684y1z7Nj">【视频】</a></li>
+</ol>
+<hr>
+<h1 id="常见的-python打包方式">常见的 Python打包方式</h1>
+<h3 id="1python嵌入式打包"><strong>1.【Python嵌入式打包】</strong></h3>
+<p><a href="https://www.bilibili.com/video/BV1684y1z7Nj">【视频】</a>-<a href="https://www.cnblogs.com/BEMAKE/p/16806999.html">【图文教程文章】</a></p>
+<ol>
+<li>在Python官网下载 embeddable版本 32位 3.7/3.8版 <a href="https://www.python.org/downloads/windows/">【链接Link】</a></li>
+<li>解压zip文件</li>
+<li>下载<code>get-pip.py</code>文件，打开网站把内容复制粘贴到新建get-pip.py文件里保存，以<code>if --name--</code>结尾  <a href="https://bootstrap.pypa.io/get-pip.py">【链接Link】</a></li>
+<li>安装 pip包管理工具，约20MB 可不装，可在其他环境装了之后复制过去，节省空间。
+<ol>
+<li>在文件路径上输入cmd打开命令管理器，<code>python get-pip.py</code>运行，防止下载速度慢可以加上镜像源，如<code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>，执行后下载<code>Lib</code> <code>Scripts</code>等文件夹，第三方库保存在Lib文件夹内。(关闭代理)</li>
+<li><strong>直接将文件拖至解释器运行</strong>，拖动文件到python.exe上可以直接打开，更加简单快捷。</li>
+<li>使用BAT批处理, 一键安装/重装。（只要移动了文件夹/目录改变，执行pip会报错，需要安装/重装pip）<pre><code class="language-bat">@echo off
+chcp 65001
+.\python.exe .\get-pip.py
+</code></pre>
+</li>
+</ol>
+</li>
+<li>记事本打开<code>python3xx._pth</code> 删掉最后的#注释<code>#import site</code> 保存。# 否则无法正常使用pip</li>
+<li><strong>安装第三方库</strong>，进入Scripts文件夹，打开cmd，使用正常的pip安装命令即可，如<code>pip install numpy</code>, 文件会被安装在当前环境的<code>Lib\site-packages</code>文件夹内</li>
+<li><strong>运行程序</strong>：
+<ol>
+<li>在<code>python.exe</code>目录打开cmd，键入<code>python.exe demo.py</code>即可运行<code>demo.py</code></li>
+<li>使用BAT批处理程序调用<pre><code class="language-bat">@echo off
+chcp 65001
+.\runtime\python.exe .\demo.py
+</code></pre>
+</li>
+<li>使用知乎大佬的 PyStand启动器调用 ↓</li>
+</ol>
+</li>
+</ol>
+<h3 id="2pystand韦易笑大佬的嵌入式python启动器"><strong>2.【PyStand】韦易笑大佬的嵌入式Python启动器</strong></h3>
+<p><a href="https://www.zhihu.com/question/48776632/answer/2336654649">【知乎文章】</a> / <a href="https://github.com/skywind3000/PyStand">【GitHub】</a></p>
+<ol>
+<li>下载压缩包，解压 <a href="https://github.com/skywind3000/PyStand/releases">【GitHub releases Downlows】</a></li>
+<li><strong>第三方库</strong>，把电脑中相同的Python环境的库复制到<code>site-packages</code>(不过很容易漏掉，一个库通常包含多个文件夹)</li>
+<li>代码加密？ 加密方法见原作者描述</li>
+<li><strong>运行程序</strong>：
+<ul>
+<li>运行<code>PyStand.exe</code>程序会调用<code>runtime\python.exe</code>解释器运行与程序同名的<code>.int</code>文件，如<code>PyStand.int</code>，将py代码复制到<code>.int</code>文件内即可</li>
+<li>在cmd中运行<code>PyStand.exe</code>程序可以在黑框框显示<code>print</code>调试输出 和报错等内容，方便检查。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-pyinstaller">3. 【PyInstaller】</h3>
+<p>参考文章： <a href="https://zhuanlan.zhihu.com/p/470301078">【知乎】</a> / <a href="https://blog.csdn.net/hdudb/article/details/122055537">【CSDN过程+去坑】</a></p>
+<ol>
+<li>安装Pyinstaller，<code>pip install pyinstaller</code></li>
+<li>在<code>.py</code>文件的目录运行打开cmd命令窗口</li>
+<li>命令行窗口输入<code>pyinstaller demo.py</code>即可。<br>
+<strong>其中，可以填入的一些参数选项：</strong><br>
+<code>-F</code> 大写，是onefile，打包成单个独立exe程序<br>
+(本质上就是1个自解压程序，将整个Python解释器解压至temp缓存目录再运行，关闭后又删除如此反复，所以启动速度迟钝、慢半拍)<br>
+<code>-D</code> 大写,默认选项可不填。D是onedir，打包生成多个依赖文件和exe程序，放在一个文件夹内，略显凌乱，但启动速度快，可以在上层目录用 BAT调用程序启动。(或PyStand调用)<br>
+<code>-c</code> 显示命令行窗口<br>
+<code>-w</code> 不显示命令行窗口，去除黑框框<br>
+<code>-i</code> 修改生成exe程序的图标，ico格式尺寸16x16、32x32等<br>
+示例：<code>pyinstaller -w -i D:\123.ico demo.py</code></li>
+<li>其它可能会出现的问题，有些库可能打包不全，需要手动复制到文件夹内</li>
+</ol>
+<ul>
+<li>Pyinstaller + UPX 打包程序（不太重要） <a href="https://www.bilibili.com/video/BV1j341137De/">【相关视频】</a></li>
+</ul>
+<blockquote>
+<p>未完待续...</p>
+</blockquote>
+<hr>
+<h1 id="diy-pyinstaller-自制-python打包模板">【DIY Pyinstaller】 自制 Python打包模板！</h1>
+<h3 id="结合pystand和嵌入式-python自制python打包模板">结合<code>PyStand</code>和嵌入式 Python，自制Python打包模板</h3>
+<p>在使用了 <code>PyStand</code> 和 嵌入式Python之后，我发现可以把这两者结合起来！<br>
+<strong>本项目基于 <code>Python v3.8.8 embed</code> 嵌入式版制作</strong></p>
+<ul>
+<li>步骤：
+<ul>
+<li>进入<a href="https://www.python.org/downloads/windows/">python官网</a>下载  <code>embeddable</code>嵌入式Python、下载pip工具、移植Tkinter库...等等</li>
+<li>使用 <code>PyStand</code> 调用 <code>runtime</code> 文件夹内解释器, 去运行同级目录的同名int文件 <code>PyStand.int</code></li>
+<li>添加一些细节，可以方便后续开发 Python程序时，更加高效便捷！</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="造轮子使我快乐">造轮子使我快乐！！</h3>
+<hr>
+<hr>
+<h3 id="注意事项">注意事项：</h3>
+<ol>
+<li>为了更简单轻便，<code>PyStand.exe</code> 和 <code>run.BAT</code> 的启动方式，二选一即可，<code>PyStand.exe</code> 程序的注意事项请自行阅读原作者的文章 <a href="https://www.zhihu.com/question/48776632/answer/2336654649">【文章链接】</a></li>
+<li>请注意Python解释器为32位，有些库可能不兼容32位，需要64位请自行去Python官网下64位版的embeddable嵌入式版</li>
+<li>嵌入式版的Python压缩后大小为7M，解压后也仅十几M，我打包的包含了pip管理器和相关的库，以及PyQt5, 可自行删除。如<code>site-packages</code>和<code>Scripts</code>文件夹的内容。</li>
+<li>解压后，只要移动了文件夹/解释器目录改变了，执行pip时会报错，重装pip 可解决，建议创建bat批处理一键安装/重装。（见上面安装pip的第3个方法，已添加【一键安装】.bat批处理文件）</li>
+<li></li>
+</ol>
+<blockquote>
+<p>未完待续...</p>
+</blockquote>
+<hr>
+<h3 id="目前发现的问题">目前发现的问题：</h3>
+<ol>
+<li><s>（由于是嵌入式版的原因，Python并没有自带<code>Tkinter</code> 库/模块，尝试了很多种方法都不行，导致一些小脚本想做一个带小窗口界面不能用简单的TK库，只能使用PyQt5这种稍微复杂/繁琐/庞大的库，又多浪费了几十MB的空间...）</s><br>
+<strong>已解决</strong> 安装同版本同位数的install安装版，以<code>/</code>为根目录，将install版的 ↓<pre><code class="language-txt">/tcl 复制到嵌入式版的根目录 /
+/Lib/tkinter 复制到 /Lib/site-packages/
+/DLLs/_tkinter.pyd 复制到 /
+/DLLs/tcl86t.dll 复制到 /
+/DLLs/tk86t.dll 复制到 / 
+</code></pre>
+</li>
+<li></li>
+</ol>
+<blockquote>
+<p>欢迎反馈，未完待续...</p>
+</blockquote>
+<hr>
+<h3 id="在程序打包发布时可以删除减少容量大小的地方">在程序打包发布时，可以删除减少容量大小的地方：</h3>
+<p>Lib\site-packages 约20MB<br>
+这里面预先装了 pip包管理器和tkinter，视情况处理，均可删除</p>
+<p>tkinter库，约12MB<br>
+/tcl<br>
+/Lib/site-packages/tkinter<br>
+/_tkinter.pyd<br>
+/tcl86t.dll<br>
+/tk86t.dll<br>
+以/runtime为根目录，删除这五个文件、文件夹即可</p>
+<hr>
+<h3 id="我的打包文件下载">我的打包文件下载</h3>
+<ol>
+<li>在GitHub页面右边的 <strong>发行版Releases</strong></li>
+<li><a href="https://wwt.lanzoue.com/b021w3uxc">【蓝奏云·合集】</a> 密码:diy</li>
+</ol>
+<hr>
+<h3 id="更新日志倒序">更新日志：（倒序）</h3>
+<p>2022年10月26日 更新v1.2 发现改变目录后pip包管理工具会失效，则删除了相关文件，需要pip请运行【一键安装】.bat文件<br>
+2022年10月23日 更新v1.1 解决了无法使用tkinter的问题<br>
+2022年10月23日 发布在GitHub<br>
+2022年10月22日 创建</p>
+<hr>
+<h2 id="my-python-diyembed-demo">My-Python-DIYembed-demo</h2>
+<h3 id="自定义更方便快捷的python嵌入式打包程序">自定义更方便快捷的Python嵌入式打包程序</h3>
+<p>根据Python嵌入式版本embeddable，搭配PyStand，自定义一个更加方便快捷的Python打包程序。<br>
+<strong>本项目基于 <code>Python v3.8.8 embed</code> 嵌入式版制作</strong></p>
+<blockquote>
+<p>其他问题，请阅读 <a href="https://github.com/750ti/DIY-Pyinstaller-embed">README.md</a></p>
+</blockquote>
+<hr>
+<h2 id="版本说明">版本说明：</h2>
+<table>
+<thead>
+<tr>
+<th>版本号</th>
+<th>备注说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.2</td>
+<td>删减无效的pip包管理工具，新增pip说明和【一键安装】.bat</td>
+</tr>
+<tr>
+<td>Life 版</td>
+<td>保留Tkinter库，精简删除PyQt5（青春版）</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>更新支持Tkinter库</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>最初发布版 自带PyQt5模块</td>
+</tr>
+</tbody>
+</table>
+<hr>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[VSCode插件plugin_Obsidian插件]]></title>
+        <id>https://supermoon-plus.github.io/post/vscode-cha-jian-plugin_obsidian-cha-jian/</id>
+        <link href="https://supermoon-plus.github.io/post/vscode-cha-jian-plugin_obsidian-cha-jian/">
+        </link>
+        <updated>2023-01-06T14:57:33.000Z</updated>
+        <content type="html"><![CDATA[<p>更新-2023年3月31日</p>
+<h1 id="vscode">VSCode</h1>
+<p>VSCode 需修改的设置<br>
+向下复制行 ctrl + D<br>
+切换行注释 ctrl + Q</p>
+<h3 id="功能">功能</h3>
+<ul>
+<li>【ChatMoss】AI对话插件</li>
+<li>【CodeGeeX】Github Copilot 免费平替</li>
+<li>【Notes】VScode笔记</li>
+<li>【Project Manager】多文件夹 / 多项目管理器</li>
+<li>【Markdown All in One】 多合一，快捷键、目录、链接等等</li>
+<li>【Markdown Preview Enhanced】 Markdown 预览增强, 渲染显示Markdown文档</li>
+<li>【PYQT Integration】 Qt设计师，ui转py，<br>
+<code>Pyuic: Cmd</code> 的 <code>pyuic5.exe</code><br>
+<code>Qtdesigner: Path</code> 的 <code>designer.exe</code></li>
+<li>【PySide2-VSC】 Qt设计师，ui转py，<br>
+需要在VSCode设置拓展插件的路径目录<br>
+<code>Designer-creator: Path</code> 的 <code>designer.exe</code> ，和 <code>Uic: Cmd</code> 的 <code>pyuic5.exe</code> 路径目录</li>
+</ul>
+<h3 id="外观">外观</h3>
+<ul>
+<li>【Darcula PyCharm Theme】pycharm外观主题</li>
+<li>【indent-rainbow】彩虹缩进，使缩进更具可读性</li>
+<li>【MagicPython】Python高亮</li>
+<li>【Prettier - Code formatter】更漂亮的格式化代码</li>
+</ul>
+<h3 id="ai">AI</h3>
+<ul>
+<li>【TabNine】Tabnine</li>
+<li>【GitHub Copilot】GitHub Copilot</li>
+</ul>
+<hr>
+<h1 id="obsidian">Obsidian</h1>
+<ul>
+<li>kanban 看板</li>
+<li>Advanced Tables Plugin 表格</li>
+</ul>
+<h3 id="皮肤">皮肤</h3>
+<ul>
+<li>Obsidian Nord 北极蓝色调，暗色、蓝灰色</li>
+<li>Obsidian Nord Enhanced 代码高亮版（正在使用）</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[浏览器插件]]></title>
+        <id>https://supermoon-plus.github.io/post/liu-lan-qi-cha-jian/</id>
+        <link href="https://supermoon-plus.github.io/post/liu-lan-qi-cha-jian/">
+        </link>
+        <updated>2023-01-06T14:57:01.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="浏览器">浏览器</h1>
+<p>to the Obsidian, new data 2023年3月29日</p>
+<p>/ <a href="">【】</a></p>
+<hr>
+<h2 id="浏览器插件">【浏览器插件】</h2>
+<p><a href="https://chrome.google.com/webstore/category/extensions">【Chrome应用商店】浏览器插件官网</a><br>
+<a href="https://chrome.zzzmh.cn/#/index">极简插件-合集</a></p>
+<p><a href="">https://immersive-translate.owenyoung.com/immersive-translate.user.js</a></p>
+<ul>
+<li><a href="https://itab.link/?from=itab">iTab 主页起始页</a></li>
+<li>沉浸式翻译 / <a href="https://chrome.google.com/webstore/detail/immersive-translate/bpoadfkcbjbfhfodiogcnhhhpibjhbnh?hl=zh-CN">【Chrome】</a>  / <a href="https://microsoftedge.microsoft.com/addons/detail/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91/amkbmndfnliijdhojkpoglbnaaahippg">【Edge】</a> / <a href="https://greasyfork.org/zh-CN/scripts/457196-immersive-translate">【油猴】</a></li>
+<li></li>
+<li><a href="https://chrome.zzzmh.cn/info/aapbdbdomjkkjkaonfhkkikfgjllcleb">google 翻译</a></li>
+<li><a href="https://hcfy.app/">划词翻译</a></li>
+<li>【uBlock Origin】高效/占用低/广告拦截插件-开源 <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm">谷歌商店</a> / <a href="https://chrome.zzzmh.cn/info/cjpalhdlnbpafiamejdnhcphjbkeiagm">极简插件</a> / <a href="https://filterlists.com/">第三方拦截规则订阅</a></li>
+<li><a href="https://microsoftedge.microsoft.com/addons/detail/smartup%E6%89%8B%E5%8A%BF/elponhbfjjjihgeijofonnflefhcbckp">smartUp手势 （Egde浏览器）</a></li>
+<li><a href="https://www.dual-subtitles.com/zh-CN/whatsnew/3.6.7">YouTube™ 双字幕（官网）</a> / <a href="https://chrome.google.com/webstore/detail/youtube-dual-subtitles/hkbdddpiemdeibjoknnofflfgbgnebcm">YouTube™ 双字幕（谷歌商店）</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk">【视频倍速播放】Video Speed Controller - 谷歌新版不兼容</a> / <a href="https://github.com/igrigorik/videospeed/releases">【旧版0.7.1】</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/video-speed-manager/fkopaaikpmfhpmoobnmklgmcgmhgfkcd?hl=zh-CN">【视频倍速播放】Video Speed Manager 谷歌商店</a></li>
+<li></li>
+<li>暴力猴 · 脚本管理器 - <a href="https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag?hl=zh-CN">谷歌商店</a> / <a href="https://chrome.zzzmh.cn/info/jinjaccalgkegednnccohejagnlnfdag">极简插件</a> / <a href="https://violentmonkey.github.io/">暴力猴官网</a></li>
+<li>油猴 · 脚本管理器 - <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-CN">谷歌商店</a> / <a href="https://chrome.zzzmh.cn/info/dhdgffkkebhmkfjojejmpbldmpobfkfo">极简插件</a> / <a href="https://violentmonkey.github.io/">官网</a></li>
+</ul>
+<hr>
+<h2 id="油猴插件脚本-推荐列表">油猴插件脚本 · 推荐列表</h2>
+<blockquote>
+<p>油猴，一个把功能强大的浏览器插件，无数玩家自己编写了各种功能的插件，并且开源发布出来。<br>
+其中，除了各种优秀的插件之外，也有很多装有“后门”的插件，注意甄别，尽量去找热度高，有多人评论和反馈的插件使用。</p>
+<p><a href="https://greasyfork.org/zh-CN/scripts">Greasy Fork - 用户玩家发布第三方脚本插件网站</a></p>
+</blockquote>
+<h3 id="搜索类">【搜索类】</h3>
+<ul>
+<li><a href="https://greasyfork.org/zh-CN/scripts/2765-search-engine-jump-for-academic">搜索引擎互相跳转 - 学术版</a> /  <a href="https://greasyfork.org/zh-CN/scripts?q=search+engine+jump">（与之类似的其它版本）</a></li>
+<li><a href="https://greasyfork.org/zh-TW/scripts/14178-ac-baidu-%E9%87%8D%E5%AE%9A%E5%90%91%E4%BC%98%E5%8C%96%E7%99%BE%E5%BA%A6%E6%90%9C%E7%8B%97%E8%B0%B7%E6%AD%8C%E5%BF%85%E5%BA%94%E6%90%9C%E7%B4%A2-favicon-%E5%8F%8C%E5%88%97">优化百度等等搜索引擎，去广告+重新排版等等</a></li>
+</ul>
+<h3 id="翻译">【翻译】</h3>
+<ul>
+<li><a href="https://greasyfork.org/zh-CN/scripts/378277-%E7%BF%BB%E8%AF%91%E6%9C%BA">翻译机（自动翻译YouTube评论、外网网站翻译，效果一般）</a></li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/398746-%E7%BD%91%E9%A1%B5%E7%BF%BB%E8%AF%91">网页翻译（右下角·译）</a></li>
+</ul>
+<h3 id="自媒体类">【自媒体类】</h3>
+<ul>
+<li><a href="https://greasyfork.org/zh-CN/scripts/419081-%E7%9F%A5%E4%B9%8E%E5%A2%9E%E5%BC%BA">知乎增强 - 去除弹窗+大量自定义功能等等</a></li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/39206-%E4%B8%8B%E8%BD%BD%E7%9F%A5%E4%B9%8E%E8%A7%86%E9%A2%91">知乎播放器增强、视频下载</a></li>
+<li><a href="https://github.com/the1812/Bilibili-Evolved">Bilibili Evolved B站多功能增强插件</a></li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/383143-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-b%E7%AB%99-bilibili-%E6%94%B6%E8%97%8F%E5%A4%B9fix">B站失效收藏夹</a></li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/440938-%E8%A5%BF%E7%93%9C%E8%A7%86%E9%A2%91%E8%87%AA%E5%8A%A8%E9%AB%98%E6%B8%85/code">西瓜视频自动高清</a></li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/433880-%E5%8F%96%E6%B6%88%E8%A5%BF%E7%93%9C%E5%BD%B1%E8%A7%86%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E4%B8%8B%E4%B8%80%E9%9B%86/feedback">取消西瓜影视自动播放</a></li>
+</ul>
+<h3 id="外">【外】</h3>
+<ul>
+<li><a href="https://greasyfork.org/zh-CN/scripts/369400-local-youtube-downloader">YouTube 下载器</a></li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/38182-hide-youtube-google-ad">隐藏youtube google广告</a></li>
+</ul>
+<h3 id="其它">【其它】</h3>
+<ul>
+<li><a href="https://greasyfork.org/zh-CN/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6">GitHub 中文汉化</a></li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD">Github 增强 - 高速下载</a></li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/329484-%E8%B1%86%E7%93%A3%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD%E5%A4%A7%E5%B8%88-1%E7%A7%92%E6%90%9E%E5%AE%9A%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1-%E9%9F%B3%E4%B9%90-%E5%9B%BE%E4%B9%A6%E4%B8%8B%E8%BD%BD/code">豆瓣电影资源下载索引list</a></li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/428960-csdn-%E7%9F%A5%E4%B9%8E-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-%E7%AE%80%E4%B9%A6%E5%85%8D%E7%99%BB%E5%BD%95%E5%8E%BB%E9%99%A4%E5%BC%B9%E7%AA%97%E5%B9%BF%E5%91%8A">CSDN/知乎/B站/简书.免登录去弹窗</a></li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/444347-azure-speech-download">微软文本转语音，添加下载MP3音频按钮</a></li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/28497-%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E8%A7%A3%E9%99%A4-%E6%94%B9">解除网页限制，复制文本等</a></li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/399478-%E6%88%91%E8%A6%81%E5%BD%A9%E8%89%B2">我要彩色，解除特殊事件网站变黑白的现象</a></li>
+</ul>
+<h3 id="插件合集-导航">【插件合集、导航】</h3>
+<ul>
+<li><a href="https://github.com/XIU2/UserScript">XIU2/UserScript 一个油猴插件脚本搜集</a></li>
+</ul>
+<hr>
+<h1 id="其它网站">其它网站</h1>
+<h3 id="音乐">音乐</h3>
+<ul>
+<li><a href="http://tool.liumingye.cn/music/?page=searchPage">MyFreeMP3 音乐下载</a></li>
+</ul>
+<hr>
+<blockquote>
+<p>未完待续<br>
+...</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>2022年8月14日 创建</p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PyQt5 学习笔记]]></title>
+        <id>https://supermoon-plus.github.io/post/pyqt5-xue-xi-bi-ji/</id>
+        <link href="https://supermoon-plus.github.io/post/pyqt5-xue-xi-bi-ji/">
+        </link>
+        <updated>2023-01-04T15:36:15.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="注意事项">【注意事项】</h1>
+<p>缩进 Tab 与 空格 互斥，本文代码缩进是Tab，而IDE缩进为4空格，可能冲突报错，自行替换</p>
+<hr>
+<blockquote>
+<p>to the obs , 更新date<br>
+2023年4月4日</p>
+</blockquote>
+<hr>
+<p>Python Qt官方文档 - 控件部分 https://doc.qt.io/qtforpython-5.12/PySide2/QtWidgets/index.html#module-PySide2.QtWidgets<br>
+【白月黑羽】Qt图形界面 图文教程合集 https://www.byhy.net/tut/py/gui/qt_05_1/</p>
+<p>作者视频 https://www.bilibili.com/video/BV1Zf4y1W79o?p=1</p>
+<p>qt 单实例运行程序<br>
+https://blog.csdn.net/bloke_come/article/details/106319236</p>
+<hr>
+<h1 id="qt窗口类型">Qt窗口类型</h1>
+<p>QMainWindow：可以包含菜单栏、工具栏、标题栏、状态栏，是最常见的窗口形式<br>
+QWidgets：不确定窗口的用途，使用QWidgets<br>
+QDialog：对话窗口的基类，用于执行短期任务，没有菜单栏、工具栏、状态栏</p>
+<hr>
+<pre><code class="language-css">配色表  颜色备份：
+
+灰色、暗色系，结合PS + VSCode 的配色方案
+按钮 #6e6e6e
+次底色 #535353
+背景色 #2b2b2b
+
+灰色系，up主 C_Konchok 的第一个窗口配色
+
+次底色 #505050
+背景色 #3c3c3c
+
+浅蓝色
+底色 #13b3fd，rgb(19, 179, 253);
+按钮    background-color: #1098d2;
+描边    border: 2px solid #0f94c8;
+
+淡绿色  参考BOSS https://uinotes.com/app/612927714122347059
+底色 #1bb4b4，27,180,180
+按钮 #53b0b1，83, 176, 177
+</code></pre>
+<h2 id="ui-界面设计篇-pyqt5-样式表">UI 界面设计篇 pyqt5 样式表</h2>
+<pre><code class="language-css"># 修改 QLabel 颜色，控件属性内 styleSheet 填入，或初始化内填入
+background-color: rgb(19, 179, 253); # 浅蓝色
+
+label.setStyleSheet(&quot;background-color: blue;&quot;) # 修改控件颜色
+label.setStyleSheet(&quot;background-color: rgb(0, 170, 0);&quot;) # 修改控件颜色，传入RGB
+label.setStyleSheet(&quot;border: 2px solid red;&quot;) # 向内增加颜色描边
+
+# main初始化内修改按钮，按钮字体颜色，悬停颜色，背景，边框，边框圆角
+self.pushButton.setStyleSheet(&quot;QPushButton{color:black}&quot;
+                                       &quot;QPushButton:hover{color:bluw}&quot;
+                                       &quot;QPushButton{background-color:lightgreen}&quot;
+                                       &quot;QPushButton{border:2px}&quot;
+                                       &quot;QPushButton{border-radius:10px}&quot;
+                                       &quot;QPushButton{padding:2px 4px}&quot;)
+
+# 按钮圆角按钮
+QPushButton {
+    border-radius: 10px; /*边框圆角半径*/
+    background-color: #4CAF50; /*背景颜色*/
+    background-color: none; /*背景色 空*/
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(110, 110, 110, 255), stop:1 rgba(150, 150, 150, 255)); /*左上右下渐变色*/
+    border: 2px solid #0f94c8;/*描边，描边颜色*
+    color: white; /*内容颜色、字体颜色*/
+    font-size: 16px; /*字体大小*/
+    padding: 10px; /*按钮填充、占用像素*/
+    font-weight: bold; /*字体粗细*/
+    font:10pt; /*字体大小*/
+    font-size:18px;/*字体大小，在网页设计中面向用户的屏幕的基本单位是px*/
+    font: 75 16pt &quot;黑体&quot;;
+    font-family:微软雅黑;
+    font-color:rgb(0, 0, 0);
+	border-image: url(:/images/images/back.jpg);/*嵌入背景图片*/
+}
+
+
+border:none;/*描边无*/
+border-bottom:4px solid rgb(0,0,0);/*给控件添加下划线。按钮\标签 */
+
+QPushButton:pressed{
+    padding-left:6px;
+    padding-top:8px;
+} /*按钮，点击时触发*/
+QPushButton:hover{
+padding-left:6px;
+} /*按钮，悬停时触发*/
+
+243,253,253
+# app蓝色
+
+窗口边角圆角
+QFrame{
+border-top-left-radius:10px;/*四个角落的圆角*/
+border-top-right-radius:0px;
+border-bottom-right-radius:0px;
+border-bottom-left-radius:0px;
+}
+
+QWidget{image:url(:/svg/img/img/image.png);
+border-radius:24px;
+background-color: rgb(255, 255, 255);
+}
+# 演示界面里的头像，Widget控件
+
+image: url(:/svg/img/img/144.png);
+background-color: rgb(228, 228, 228);
+border-radius:10px;
+
+
+布局控件
+Vertical Layout（垂直布局）
+Horizontal Layout（水平布局）这两个布局控件都有layoutSpacing （空间间距）
+
+Layout LeftMargin（布局左边距离）
+Layout TopMargin（布局顶部距离）
+Layout RightMargin（布局右边距离）
+Layout BottonMargin（布局底部距离）
+Layout Spacing（布局控件的间距）
+layout Stretch（布局比例）
+
+Grid Layout（网格布局）
+Form Layout（表单布局）
+
+
+
+
+</code></pre>
+<h2 id="读取-使用-css-文件">读取 / 使用 .css 文件</h2>
+<pre><code class="language-python"># 保存为css文件，内容
+QPushButton{
+    color: white;
+    background: deepskyblue;
+}
+
+# 定义调用函数，传入.css 文件，控件名
+def set_qss(filename:str,widget:QWidget): # 传入.css 文件，控件名
+    with open(filename) as f:
+        qss = f.read()
+        widget.setStyleSheet(qss)
+
+set_qss(&quot;./.css/button.css&quot;,self.pushButton) # 调用
+</code></pre>
+<pre><code class="language-python"># CD 到 qrc目录，执行下面命令，生成 _rc.py 并在UI转换的py文件底部 import 导入
+pyrcc5 -o res_rc.py res_rc.qrc
+
+</code></pre>
+<hr>
+<h3 id="通用示例">通用示例：</h3>
+<pre><code class="language-python">button.setText(text) # 改变 按钮/line行输入框 的文本，传入字符串
+
+button.setEnabled(True) # 启用  某个控件，所有继承自QWidget类控件，都支持。
+button.setEnabled(False) # 禁用  某个控件，禁用后用户不可操作。
+
+# ↓ 修改某个控件颜色，传入'red', 'blue', #72a771; 等参数,留空恢复默认
+self.button.setStyleSheet('background-color: #72a771;') # 背景颜色
+self.setWindowIcon(QIcon('./Icon/cat.ico')) # 初始化窗口logo图标ico格式
+
+# .ui转.py 在ui目录运行cmd，-x是生成if_name_测试代码,http://t.csdn.cn/GRG7D
+pyuic5绝对路径 test.ui -o test.py -x
+
+self.button.setToolTip('这是一个&lt;b&gt;按钮哦~~&lt;/b&gt;') # 给某个控件添加悬停提醒气泡
+
+</code></pre>
+<h3 id="pyqt5-运行-ui-模板">PyQt5 运行 ui 模板</h3>
+<pre><code class="language-python"># -*- coding: utf-8 -*-
+# https://www.cnblogs.com/linyfeng/p/11832237.html
+
+import sys
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QColor, QBrush, QIcon
+from UI_Windows import * # 导入UI
+
+class MyMainForm(QMainWindow, Ui_MainWindow):
+    def __init__(self, parent=None):
+        super(MyMainForm, self).__init__(parent)
+        self.setupUi(self)
+if __name__ == &quot;__main__&quot;:
+    app = QApplication(sys.argv)
+    myWin = MyMainForm()
+    myWin.show()
+    sys.exit(app.exec_())
+</code></pre>
+<hr>
+<h2 id="按钮-qpushbutton">按钮 <code>QPushButton</code></h2>
+<pre><code class="language-python">button1.setText('按钮1') # 修改按钮的文本 传入字符串
+
+button1.clicked.connect(self.function) # 当按钮被按下，则执行某个函数
+button1.clicked.connect(lambda: self.function('123')) # 函数需传参时用lambda表达式
+self.close() # 关闭程序
+
+</code></pre>
+<hr>
+<h2 id="单行文本框-qlineedit">单行文本框 <code>QLineEdit</code></h2>
+<figure data-type="image" tabindex="1"><img src="https://doc.qt.io/qtforpython/_images/windows-lineedit.png" alt="" loading="lazy"></figure>
+<pre><code class="language-python">self.line.text() # 读取文本框的内容
+self.line.setText(text) # 把内容写入到文本框内
+# 冷门功能 ↓ 
+self.line.clear() # 清除文本框的内容
+self.line.copy() # 只复制 选中文本 的内容
+self.line.paste() # 把剪贴板的内容，粘贴在文本框的光标处
+self.line.setPlaceholderText('请在这里输入URL') # 文本框显示提示内容
+
+self.line.textChanged.connect(self.function) # 文本框被编辑, 则调用函数
+def function（self, text): # 同上，回调函数会传入文本框的内容，用text接收可直接print。
+	print(text) 
+	# 可用于检测填入内容，如邮箱手机号等。用法：填处理函数，在函数内用setText获取文本并处理。
+
+</code></pre>
+<hr>
+<h2 id="多行纯文本框-qplaintextedit">多行纯文本框 <code>QPlainTextEdit</code></h2>
+<p>纯文本与 QTextEdit 不同，TextEdit 是富文本框，可以修改加粗、颜色、字体、字号等等内容。</p>
+<pre><code class="language-python">self.edit.toPlainText() # 获取编辑框内的文本内容
+self.edit.setPlainText(text) # 把内容写入到文本框内，覆盖，之前内容会清除
+self.edit.insertPlainText('这是在光标插入的信息') # 在光标处插入文本，不换行
+self.edit.appendPlainText('你好，这是新加入的消息') # 在末尾添加文本，自动换行
+
+self.edit.setPlaceholderText('请在这里输入薪资表...') # 纯文本框 没消息时的提示消息
+self.selection = self.edit.textCursor().selectedText() # 获取选中文本
+edit.cursorPositionChanged.connect(self.function) # 信号，当文本框光标改变时
+edit.textChanged.connect(self.function) # 信号，当文本被修改时
+
+</code></pre>
+<p>self.edit.clear() # 清除文本框的内容<br>
+self.edit.copy() # 只复制 选中文本 的内容<br>
+self.edit.paste() # 把剪贴板的内容，粘贴在文本框的光标处<br>
+self.edit.textChanged.connect(self.function) # 当文本框内容被编辑则调用函数<br>
+edit.document().setMaximumBlockCount(100) # 最大行数，超过则删除前面内容，防占用</p>
+<pre><code>
+---
+## 文本浏览框 `QTextBrowser`
+
+`QTextBrowser` 是 `只能查看文本` 控件。
+通常用来显示一些操作日志信息、或者不需要用户编辑的大段文本内容。
+该控件获取文本、修改、清除、剪贴板复制粘贴 等等， 都和上面纯文本框是一样的。
+
+不同的地方：
+```python
+edit.append('你好，白月黑羽') # 在编辑框末尾添加文本内容
+edit.insertPlainText('你好，白月黑羽') # 在编辑框末尾添加文本内容，不换行
+
+def print_logo(self,test): # 打印logo日志, 传入字符串，并显示新消息
+	self.print_logo.append(test) # 把内容添加到日志框
+	self.print_logo.ensureCursorVisible() # 自动翻滚文本框，显示新添加的消息
+</code></pre>
+<hr>
+<h2 id="标签-qlabel">标签 <code>QLabel</code></h2>
+<p>常见的标签，可以显示文字（包括纯文本和富文本）、图片 甚至动画。<br>
+插入图片在 Qlabel - pixmap 内可选择图片路径。<br>
+<code>button.setText(text) # 修改标签文本内容</code></p>
+<hr>
+<h2 id="选择文件-选择文件夹-qfiledialog">选择文件 / 选择文件夹 <code>QFileDialog</code></h2>
+<p>选择文件或者目录<br>
+<code>getExistingDirectory</code> 选择目录，字符串。<br>
+<code>getOpenFileName</code> 选择单个文件，字符串。<br>
+<code>getOpenFileNames</code> 选择 单个/多个 文件，返回列表。</p>
+<pre><code class="language-python">image_file, _ = QFileDialog.getOpenFileName(self,'选择文件', './','选择图片 (*.jpg*.png *.jpeg)') # 传参（self父类，选择框标题，起始目录'D://'，说明+格式要求）
+# 选择单个文件，返回两个参数，字符串，取消不选则为''空，
+
+image_files, _ = QFileDialog.getOpenFileNames(self,'选择单个或多个文件', './','选择图片 (*.jpg*.png *.jpeg)') # 同上，# 选择单个/多个文件，返回两个参数，接收内容为列表，取消不选则为[]空列表
+
+image_dir = QFileDialog.getExistingDirectory(self,'选择文件夹', './') # 标题、路径
+# 选择文件夹，返回文件夹路径字符串，取消不选则为''空
+
+save_path, _ = QFileDialog.getSaveFileName(self, &quot;选择保存文件路径&quot;, './', '保存格式 (*.txt *.mpr)') # 选择保存路径, return返回选择路径，字符串，如'D:/aa/t1.txt'，取消为''空
+        # 获取桌面路径
+
+from PyQt5.QtCore import QStandardPaths
+desktop_path = QStandardPaths.writableLocation(QStandardPaths.StandardLocation.DesktopLocation)
+
+# 在 我的模板 里有详细的完成的函数
+</code></pre>
+<hr>
+<h2 id="下拉框-组合选择框-qcombobox">下拉框 / 组合选择框 <code>QComboBox</code></h2>
+<p>组合选择框，下拉框。 <a href="https://doc.qt.io/qtforpython-5.12/PySide2/QtWidgets/QComboBox.html">官网介绍</a></p>
+<pre><code class="language-python">mode = cbox.currentText() # 获取当前选项的 文本/内容
+
+cbox.addItem('选项x') # 在末尾，新增一个选项
+cbox.addItems(['byhy','白月黑羽','python教程']) # 在末尾，新增多个选项
+cbox.removeItem(index) # 删除某一个选项，传入选项的索引
+cbox.clear() # 清空/删除 全部所有选项
+cbox.currentIndexChanged.connect(self.function) # 信号，当选项改变时执行函数
+</code></pre>
+<hr>
+<h2 id="单选按钮-qradiobutton">单选按钮 <code>QRadioButton</code></h2>
+<figure data-type="image" tabindex="2"><img src="https://cdn2.byhy.net/imgs/gh/36257654_69709779-0a30cd80-1139-11ea-8ac6-eb19387ad278.png" alt="image" loading="lazy"></figure>
+<p><code>同一个父窗口</code> 里面的多个按钮，只能选中一项。<br>
+如果你有多组单选按钮， 每组都应该有不同的父控件，或者不同的Layout。<br>
+<strong>建议：</strong> 把每一组单选按钮，放到不同的按钮组，右键分组。 <a href="https://www.bilibili.com/video/BV1cJ411R7bP?p=12">作者视频讲解</a></p>
+<pre><code class="language-python"># 示例： 创建了两个按钮，猫和狗，放进了叫 cat_dog 的按钮组
+self.cat_dog.buttonClicked.connect(self.function) # 信号，点击任意按钮 调用函数
+txt = self.cat_dog.checkedButton().text() # 获取按钮组里，选项的文本，字符串
+</code></pre>
+<hr>
+<h2 id="勾选按钮-qcheckbox">勾选按钮 <code>QCheckBox</code></h2>
+<figure data-type="image" tabindex="3"><img src="https://cdn2.byhy.net/imgs/gh/36257654_69712525-f3d94080-113d-11ea-87f7-473072834121.png" alt="image" loading="lazy"></figure>
+<p>同上，多个按钮，放进一个按钮组里，默认为单选，使用方法和效果 同上 ↑</p>
+<p>多选模式，需要注意<br>
+在 Qt设计师编辑器中，可以设置 按钮组 的 <code>exclusive</code> 属性，√为单选，X为多选</p>
+<pre><code class="language-python"># 示例：创建多个勾选按钮，并放进 buttonGroup_feizai 按钮组
+self.buttonGroup_feizai.buttonClicked.connect(self.function) # 信号 调用函数
+# 单选模式
+txt = self.buttonGroup_feizai.checkedButton().text() # 按钮组单选，读取按钮组的结果
+
+# 多选模式，手动查询每个按钮，勾选时为True，不勾为False
+print(self.checkBox_1.isChecked()) # 查询按钮状态，勾True，不勾False
+print(self.checkBox_2.isChecked())
+
+# 多选模式下，不能用单选的方式，不勾时返回None，无法做判断
+</code></pre>
+<hr>
+<h2 id="进度条-qprogressbar">进度条 <code>QProgressBar</code></h2>
+<p>进度条是一个常用的控件，当程序需要做一件比较耗费时间的任务（比如统计数据，下载文件等），可以用来向用户指示操作的进度。</p>
+<p>放在循环中，但是当处理时间很长，如超过10秒，防止未响应，最好是在多线程运行</p>
+<pre><code class="language-python">self.progressBar.setRange(0,10) # 设定进度的步数，起始和结束
+self.progressBar.setValue(3) # 更新进度到哪一步
+self.progressBar.reset() # 重置进度条
+</code></pre>
+<hr>
+<h2 id="表格控件-qtablewidget">表格控件 <code>QTableWidget</code></h2>
+<p><a href="https://www.byhy.net/tut/py/gui/qt_05_2/#%E8%A1%A8%E6%A0%BC">【文章介绍】</a></p>
+<pre><code class="language-python">txt = self.excel.item(0,0).text() # 获取单元格的文本内容，参数为 行/列 索引
+# 注意索引列表不存在则报错，规避
+
+self.excel.setItem(1, 1, QTableWidgetItem('白月黑羽')) # ↓ 新增/修改表格内容。传入 行/列 的索引，和表格实例化后的内容。索引与表格不符则跳过不报错
+self.excel.item(0,0).setText('江老师') # 修改表格已有内容。传入行/列索引，索引无效则报错
+
+# 行列数量 读取/修改，删除表格内容
+rowcount = self.excel.rowCount() # 获取表格所有的 行数
+rowcount = self.excel.columnCount() # 获取表格所有的 列数
+currentrow = table.currentRow() # 获取当前选中是第几行 (索引), 方便在表格中间插入新行
+self.excel.setRowCount(10) # 设置修改 表格行数
+self.excel.setColumnCount(10) # 设置修改 表格列数
+self.excel.clearContents() # 删除表格所有内容，但表格行列还在，删除用setRowCount
+
+self.excel.horizontalHeader().setStretchLastSection(True) #最后列贴边不留空
+# 或者在Qt设计师编辑器内，表格控件属性里，勾选 HorizontalHeaderStretchLastSection
+
+self.excel.cellChanged.connect(self.function) # 信号，当表格内容改变时调用函数
+def function(self, row, columu): # 回调函数，返回行列索引
+	print(f'第{row}行，第{columu}列，内容被修改')
+
+# 只有列的表格：
+# 表格每列的宽度，默认100，传入列的索引和宽度
+self.excel.horizontalHeader().resizeSection(0,150)
+self.excel.horizontalHeader().resizeSection(1,100)
+# 插入显示至表格，传入二维列表，如[[1,2,3],[4,5,6],] 只有一个列表需写成 [[1,2,3],] 
+def input_excel(self, lists): 
+	for i in range(len(lists)):
+		item = lists[i]
+		row = self.excel.rowCount()
+		self.excel.insertRow(row)
+		for j in range(len(item)):
+			item = QTableWidgetItem(str(lists[i][j]))
+			self.excel.setItem(row,j,item)
+
+</code></pre>
+<hr>
+<h2 id="日期控件-qdateedit">日期控件 <code>QDateEdit</code></h2>
+<p>QDate 对象的具体说明<a href="https://doc.qt.io/qtforpython-5.12/PySide2/QtCore/QDate.html">参考官方文档</a></p>
+<pre><code class="language-python">
+qdate = self.dateEdit.date()
+qdate.toString('yyyy-MM-dd') # 获取控件内容，并转换成指定格式
+# 年月日
+year = qdate.year()   # 返回 2020
+month = qdate.month() # 返回 5
+day = qdate.day()     # 返回 2
+# 格式参考
+'yyyy-MM-dd dddd'=2000-01-01 星期六
+
+# 相关内容不太好找，已放弃摆烂
+
+</code></pre>
+<hr>
+<h2 id="pyqt5播放音频-csdn文章">PyQT5播放音频 <a href="http://t.csdn.cn/7zEqJ">CSDN文章</a></h2>
+<pre><code class="language-python">import time
+from PyQt5.QtCore import QUrl
+from PyQt5.QtMultimedia import QMediaContent, QMediaPlayer
+file = QUrl.fromLocalFile(&quot;E:\[音效素材]\鼓+锣-转场提示音效.wav&quot;) # 定义文件路径
+content = QMediaContent(file) # 创建 QMediaContent 对象
+player = QMediaPlayer() # 创建 QMediaPlayer 对象
+player.setMedia(content) # 设置媒体内容
+player.setVolume(50.0) # 设置音量
+player.play() # 播放音频
+time.sleep(2) # 程序暂停，不能低于音频时长
+</code></pre>
+<hr>
+<h2 id="拖拽文件至窗口获取文件路径">拖拽文件至窗口，获取文件路径</h2>
+<p>文章1 http://t.csdn.cn/okZdU<br>
+文章2 http://t.csdn.cn/h4JKK</p>
+<p>在Qt设计师编辑器中，大部分控件默认开启 <code>setAcceptDrops</code> 功能，拖拽时会导致重复获取，<br>
+可将无关控件的 <code>setAcceptDrops</code> 功能禁用。</p>
+<pre><code class="language-python">self.setAcceptDrops(True) # 初始化，# 调用Drops方法
+def dragEnterEvent(self, evn): # 当有文件拖入时执行该函数
+	self.setWindowTitle('鼠标拖入窗口了')
+	path_list = evn.mimeData().text().replace('file:///', '') # 获取拖入的文件内容
+	self.print_logo('文件路径：\n' + path_list)
+	# 鼠标放开函数事件
+	evn.accept()
+def dropEvent(self, evn): # 松开鼠标后执行
+	self.setWindowTitle('鼠标放开了')
+
+</code></pre>
+<h2 id="2纯文本输入框控件拖入文件获取路径">2.纯文本输入框控件，拖入文件，获取路径</h2>
+<p>有缺点，同时拖入多文件时会有奇奇怪怪的问题，只适合拖入单文件。（2022年12月18日）</p>
+<pre><code class="language-python">self.textEdit.textChanged.connect(self.editchange)
+def editchange(self):
+	if self.textEdit.toPlainText().find('file:///') &gt;= 0: # 
+		path_name = self.textEdit.toPlainText().replace('file:///', '')
+		self.textEdit.setPlainText(path_name + '\n')
+</code></pre>
+<hr>
+<h2 id="创建子窗口-wifget-and-dialog">创建子窗口 Wifget and dialog</h2>
+<pre><code class="language-python"># 创建ui窗口文件.ui，QWidget=小工具窗口如设置，QDialog=对话窗口，弹出确认取消的对话框
+class Wifget_win1(QWidget): # 子函数
+    def __init__(self):
+        super(Wifget_win1, self).__init__()
+        loadUi('Wifget_win1.ui', self) # 直接加载ui文件，无需转换 .ui → .py
+        # Wifget_win 子程序初始化内容
+        self.button_print.clicked.connect(lambda: print('push button 123'))
+        self.button_closed.clicked.connect(lambda: self.close())
+class dialog_win1(QDialog): # 子函数
+    def __init__(self):
+        super(dialog_win1, self).__init__()
+        loadUi('dialog_win1.ui', self) # 直接加载ui文件，无需转换 .ui → .py
+        # dialog_win 子程序初始化内容
+        self.buttonBox.accepted.connect(self.push_OK)
+        self.buttonBox.rejected.connect(self.push_NO)
+        self.button_print.clicked.connect(lambda: print('push button 123'))
+    def push_OK(self):
+        print(&quot;push_OK Accept button clicked&quot;)
+    def push_NO(self):
+        print(&quot;push_NO Reject button clicked&quot;)
+
+# 主程序内：
+self.button_dialog_win1.clicked.connect(self.open_Dialog_win1) # 按钮4
+self.button_wifget_win1.clicked.connect(self.open_Wifget_win1) # 按钮4
+def open_Wifget_win1(self): # 打开 Wifget 子窗口
+	self.my_Wifget_win1 = Wifget_win1()
+	self.my_Wifget_win1.show()
+def open_Dialog_win1(self): # 打开 Dialog 子窗口
+	self.my_dialog_window = dialog_win1()
+	self.my_dialog_window.exec_() # 用.exec_则窗口置顶+阻塞主线程，用show 则否
+
+</code></pre>
+<h2 id="获取鼠标点击事件">获取鼠标点击事件</h2>
+<pre><code class="language-python"># 只对放在具体的类，生效，如 http://t.csdn.cn/Xy8SZ
+def mousePressEvent(self, e):  ##重载一下鼠标点击事件
+	print(QtCore.Qt.LeftButton)
+	if e.buttons () == QtCore.Qt.LeftButton: # 左键按下
+	elif e.buttons () == QtCore.Qt.RightButton: # 右键按下
+	elif e.buttons () == QtCore.Qt.MidButton: # 中键按下
+	elif e.buttons () == QtCore.Qt.LeftButton | QtCore.Qt.RightButton: # 左右键同时按下
+	elif e.buttons () == QtCore.Qt.LeftButton | QtCore.Qt.MidButton: # 左中键同时按下
+	elif e.buttons () == QtCore.Qt.MidButton | QtCore.Qt.RightButton:  # 右中键同时按下
+	elif e.buttons () == QtCore.Qt.LeftButton | QtCore.Qt.MidButton | QtCore.Qt.RightButton: # 左中右键同时按下
+# --------
+def mousePressEvent(self, event): # 获取鼠标点击事件，点击位置和左右键等等
+	if self.rect().contains(event.pos()):
+		print('Mouse pressed at', event.x(), event.y(), 'inside the widget')
+	else:
+		print('Mouse pressed at', event.x(), event.y(), 'outside the widget')
+</code></pre>
+<hr>
+<blockquote>
+<p>未完待续...</p>
+</blockquote>
+<hr>
+<hr>
+<p>笔记时间：<br>
+2022年12月9日下午晚上 创建<br>
+2022年12月10日05:37:08 完成大部分</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Conda常用命令.md]]></title>
+        <id>https://supermoon-plus.github.io/post/conda-chang-yong-ming-ling-md/</id>
+        <link href="https://supermoon-plus.github.io/post/conda-chang-yong-ming-ling-md/">
+        </link>
+        <updated>2023-01-04T15:36:01.000Z</updated>
+        <content type="html"><![CDATA[<p>Miniconda 官网下载， https://docs.conda.io/en/latest/miniconda.html</p>
+<p>手动添加环境变量，打开设置，搜索 path，系统变量 - path ，手动新建</p>
+<p><code>D:\miniconda3</code><br>
+<code>D:\miniconda3\Library\bin</code><br>
+<code>D:\miniconda3\Scripts</code></p>
+<p>未完待续</p>
+<h3 id="conda-第三方库命令-csdn-文章">Conda 第三方库命令 / <a href="http://t.csdn.cn/BgOeO">CSDN 文章</a></h3>
+<pre><code class="language-python">conda install xxx
+#安装第三方库，（在当前环境下）conda install xxx=2.1 #可指定版本号
+
+pip install -r requirements.txt
+# 在某个目录下，执行安装，用CD C:\ 命令进入目录
+
+conda install xxx -i 源名称或链接 # 指定下载源
+conda install opencv-python -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+conda uninstall xxx
+# 卸载第三方库
+
+conda list # 查看当前环境中，第三方库列表
+
+</code></pre>
+<h3 id="conda-环境篇">conda 环境篇</h3>
+<pre><code class="language-python">conda activate python38
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+conda activate python38
+#激活 / 进入到 python38 这个虚拟环境
+
+conda create -n python38 python==3.8.15
+#创建叫python38的环境
+
+conda remove -n python38 --all
+#删除叫python38的环境
+
+python --version
+# 查看当前环境的python版本
+
+conda env list
+# 虚拟环境列表，总共创建了哪些虚拟环境
+
+nvidia-smi # 查看显卡驱动版本
+
+
+import torch
+torch.__version__
+'1.13.1+cu117'
+torch.cuda.is_available()
+True
+# 检测torch、CUDA环境
+
+
+</code></pre>
+<h3 id="注意事项">注意事项：</h3>
+<ul>
+<li>Conda 需要提前设置好国内下载源 <a href="http://t.csdn.cn/HqvHh">CSDN Link</a></li>
+<li>WARNING:Ignore 报错时，修改系统默认 UTF-8 编码 <a href="http://t.csdn.cn/Qkv0c">CSND Link</a></li>
+<li></li>
+</ul>
+<hr>
+<h4 id="旧版为大家整理了一些常用的-conda-命令-bili-video">【旧版】为大家整理了一些常用的 conda 命令：  <a href="https://www.bilibili.com/video/BV1PT4y1i7qt">Bili Video</a></h4>
+<pre><code class="language-python">1. conda --version #查看conda版本，验证是否安装
+2. conda update conda #更新至最新版本，也会更新其它相关包
+3. conda update --all #更新所有包
+4. conda update package_name #更新指定的包
+conda env list # 查看当前存在哪些虚拟环境
+
+5. conda create -n env_name package_name
+#创建名为env_name的新环境，并在该环境下安装名为package_name 的包，
+#可以指定新环境的版本号，
+#例如：conda create -n python2 python=python2.7 numpy pandas，
+#创建了python2环境，python版本为2.7，同时还安装了numpy pandas包
+
+6. source activate env_name #切换至env_name环境
+7. source deactivate #退出环境
+8. conda info -e #显示所有已经创建的环境
+9. conda create --name new_env_name --clone old_env_name 
+#复制old_env_name为new_env_name
+10. conda remove --name env_name –all #删除环境
+11. conda list #查看所有已经安装的包
+
+13. conda install --name env_name package_name #在指定环境中安装包
+14. conda remove -- name env_name package #删除指定环境中的包
+15. conda remove package #删除当前环境中的包
+16. conda env remove -n env_name #采用第10条的方法删除环境失败时，可采用这种方法
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[按键精灵-代码集md]]></title>
+        <id>https://supermoon-plus.github.io/post/an-jian-jing-ling-dai-ma-ji-md/</id>
+        <link href="https://supermoon-plus.github.io/post/an-jian-jing-ling-dai-ma-ji-md/">
+        </link>
+        <updated>2023-01-04T15:35:31.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/baike/s=250/sign=4e290e87e41190ef05fb95dafe1b9df7/314e251f95cad1c86c9a224d7c3e6709c93d51b3.jpg" alt="" loading="lazy"></figure>
+<hr>
+<h1 id="按键精灵-常用命令">按键精灵-常用命令</h1>
+<blockquote>
+<p>2022年6月5日 将旧笔记转写成MarkDown笔记，并且精简掉一些琐碎的内容</p>
+</blockquote>
+<h3 id="简短草稿">简短草稿</h3>
+<pre><code class="language-c">一行代码可以做什么？任意编辑网页
+document.body.contentEditable='true';
+
+关于投放超武坐标生成，现在有一个新思路
+可以使用等待任意键，判断上下左右的八个方向坐标
+自动生成一句坐标，比如→a→a，即：坐标向右并点投放
+（2021年8月18日00:19:19）已完成！2022年1月30日
+...
+
+</code></pre>
+<h2 id="代码集散">代码集散</h2>
+<pre><code class="language-c">
+Hwnd = Plugin.Window.Find(&quot;类名&quot;, &quot;记事本&quot;)
+// 传入类名和标题，str，填0为忽略，返回窗口句柄
+Call Plugin.Bkgnd.LeftClick(Hwnd句柄, 200, 100)
+// 后台鼠标点击，填入句柄和窗口相对坐标
+// 在抓抓可以看到窗口类名、标题，以及句柄，和相对坐标
+
+
+&quot;Attachment:\神盾.bmp&quot; //找图附件路径
+
+shubiao=WaitClick() // 等待鼠标按键，可用于启动后等特定的动作后，再进入脚本
+
+
+Dim x,y //定义变量
+
+GetCursorPos x, y // 把当前鼠标的位置，保存到坐标X，Y
+SaveMousePos // 保存当前鼠标位置
+RestoreMousePos // 恢复上次保存的鼠标位置
+
+Delay 200 //延迟200毫秒
+
+</code></pre>
+<h3 id="获取时间">获取时间</h3>
+<pre><code class="language-c">GetDateTime 获取系统日期和时间
+s=Plugin.Sys.GetDateTime()
+MessageBox &quot;您的操作系统日期和时间：&quot; &amp; s // 弹窗
+// 结果：2022-03-18 13:38:08
+
+</code></pre>
+<h2 id="找图">找图</h2>
+<pre><code class="language-c">// 区域找图，  // 把图片拖入附件
+FindPic 0, 0, 2560, 1440, &quot;Attachment:\神盾.bmp&quot;, 0.9, intX, intY
+If intX &gt; 0 And intY &gt; 0 Then // 判断是否找到
+// 这里写找到时的内容
+end if
+</code></pre>
+<h3 id="打开文件-程序-网页">打开文件、程序、网页</h3>
+<pre><code class="language-c">Call Lib.API.运行程序(&quot;D:\按键精灵生成.txt&quot;) // 打开软件、程序、文件等等
+
+RunApp &quot;D:\按键精灵-活跃日志.txt&quot; // 打开文件、文件夹 // 填文件、文件夹的绝对路径
+
+RunApp &quot;www.baidu.com&quot; // 打开网页
+</code></pre>
+<h3 id="写入文本">写入文本</h3>
+<pre><code class="language-c">SayString &quot;京东阿尔法&quot; // 前台输入，激活窗口生效
+
+Call Plugin.File.WriteFileEx(&quot;D:\按键精灵生成.txt&quot;, &quot;文本内容xxx&quot;)
+//填入绝对路径，后台写入txt文档末尾追加1行，这句不会覆盖原内容，并每句换行，方便写入log等
+
+</code></pre>
+<h3 id="字符串连接变量">字符串连接变量</h3>
+<pre><code class="language-c">// 使用 &amp; 可以把字符串和变量，连接起来，两边连接则需都加 &amp; 符号
+a=1
+b=2
+MessageBox &quot;X的坐标为&quot;&amp;a&amp;&quot;,Y的坐标为&quot;&amp;b // 弹出窗口
+SayString &quot;X的坐标为&quot;&amp;a&amp;&quot;,Y的坐标为&quot;&amp;b // 写入文本
+</code></pre>
+<h3 id="常见判断-循环">常见判断、循环：</h3>
+<pre><code class="language-c">// If判断：
+If i=5 Then
+Delay 100 // 判断为true时，执行的语句
+ElseIf // 可以继续添加 否则如果，再进行判断
+Else // Else否则，当判断为false 时，执行的语句，可以不加
+End If // 结束判断，一个完整的if判断，需要添加该结尾
+
+// Do 死循环
+Do
+Delay 100  // 循环内容
+Exit Do //  跳出死循环
+Loop
+// Do ... loop ，为死循环，只有exit do才可以跳出循环，需添加Loop作为结尾
+
+// For 计次循环
+For 5 // 次数
+Delay 100 // 内容
+Next // 结尾
+// For 是计次循环，常见For 5 循环5次，For i=1 to 10 循环 i 从1~10次，此时i为变量
+</code></pre>
+<h3 id="调试输出">调试输出</h3>
+<pre><code class="language-c">TracePrint “调试输出的内容！”
+// 跟 print打印相容，这里可以使用 &amp; 连字符 将字符串和变量链接，如计次，&quot;这是第&quot; &amp; a &amp; &quot;次的内容&quot;
+</code></pre>
+<h3 id="键盘按键-判断按键触发执行">键盘按键, 判断按键触发执行</h3>
+<pre><code class="language-c">key = WaitKey()  // key=键盘等待的任意按键
+if key = 49 then // 当按键key，=按键码时，按键码在【基本命令】-键盘命令里面有
+    Call 一键1冷酷
+end if
+//  [来源](https://tieba.baidu.com/p/2492519318)
+</code></pre>
+<h3 id="标记goto">【标记】Goto</h3>
+<pre><code class="language-c">Rem q //标记点Q，谨慎使用，容易出 bug
+if 判断条件 then
+执行语句
+Else
+Gotu Q // 回到标记点Q，类似死循环，通过则退出
+End If
+
+Goto 标记1
+TracePrint “打印或执行指令1”【调试输出】
+TracePrint “打印或执行指令2”
+Rem 标记1
+TraocePrint “打印或执行指令3”
+// 跳转指令，使用Goto可以忽略 指令1 / 指令2
+</code></pre>
+<h3 id="子程序-参考视频">【子程序】 <a href="https://www.bilibili.com/video/BV1aJ411v78m?p=5">参考视频</a></h3>
+<pre><code class="language-c">Sub 子程序
+// 程序执行的内容
+End Sub
+
+Call 子程序 //调用子程序, 类似函数，支持传递参数
+
+</code></pre>
+<h3 id="我的常用语句do循环早期版">我的常用语句：do循环：（早期版）</h3>
+<pre><code class="language-c">Do //（循环开始）
+IfColor 39, 1027, &quot;A05000&quot;, 0 Then
+// 判断：如果点（xx,xx）的颜色 0等于.1不等于“xxxx”则
+Exit Do // 跳出循环
+End If // 判断结束
+Loop // 循环
+Do
+IfColor 39, 1027, &quot;A05000&quot;, 0 Then
+Exit Do
+End If
+Loop
+// 其中 do loop 中间的命令会被无限循环， exit do 这个命令 会终止当前的do 循环，直接跳转到loop那行命令之后的命令
+
+// 讯迪打单脚本用的简单找色验证判断
+IfColor 4,1028,&quot;50A0&quot;,1 Then
+MessageBox &quot;登录错误：无效账户&quot;
+Else
+End If
+
+//如果点（xx,xx）的颜色 0等于1不等于“xxxx”则
+//弹出窗口“xxxxx”
+//否则
+//条件结束
+
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Python常用代码命令]]></title>
+        <id>https://supermoon-plus.github.io/post/python-chang-yong-dai-ma-md-ban/</id>
+        <link href="https://supermoon-plus.github.io/post/python-chang-yong-dai-ma-md-ban/">
+        </link>
+        <updated>2023-01-04T15:34:29.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="python常用代码集">Python常用代码集</h1>
+<p>更新时间 2023年4月15日</p>
+<hr>
+<p>pynput库<br>
+截图 = grab_screen(region=(x1, y1, x2, y2))</p>
+<p>图像PIL库的基础用法笔记<br>
+<a href="https://www.jb51.net/article/225452.htm">Link1</a> / <a href="https://blog.csdn.net/zhangziju/article/details/79123275">Link2</a> / <a href="https://blog.csdn.net/qq_37816453/article/details/80434150">Link3</a></p>
+<p>教程：<a href="https://space.bilibili.com/33583863/channel/collectiondetail?sid=142598">董付国老师Python教程合集 Link</a></p>
+<p>安装第三方库时，需要关闭代理 <code>Off Free internet</code></p>
+<p>【升级pip】<br>
+<code>python -m pip install --upgrade pip</code></p>
+<p>清华的镜像安装第三方库，如OpenCV<br>
+<code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python</code></p>
+<p>批量安装-清华源<br>
+<code>pip install -r requirements. txt -f https://pypi.tuna.tsinghua.edu.cn/simple/</code></p>
+<p>卸载第三方库<br>
+<code>pip uninstall numpy</code></p>
+<p>Conda 恢复默认源<br>
+<code>conda config --remove-key channels</code></p>
+<p><strong>国内镜像源：</strong>  <a href="https://www.bilibili.com/video/BV1WB4y1P7Nk">来源视频：python安装库的4种方式</a><br>
+阿里云： http://mirrors.aliyun.com/pypi/simple/<br>
+中国科技大学： https://pypi.mirrors.ustc.edu.cn/simple/<br>
+豆瓣(douban)： http://pypi.douban.com/simple/<br>
+清华大学： https://pypi.tuna.tsinghua.edu.cn/simple/</p>
+<pre><code class="language-python">https://blog.csdn.net/thy0000/article/details/123563336
+在安装pytorch时，遇到了下面的错误：  
+An HTTP error occurred when trying to retrieve this URL
+
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+conda config --set show_channel_urls yes
+</code></pre>
+<hr>
+<h2 id="记录一些常见代码"><mark>记录一些常见代码</mark> ↓</h2>
+<pre><code class="language-Python">
+
+# PyAutoGui 的弹窗
+pyautogui.alert('这个消息弹窗是文字+OK按钮')
+pyautogui.confirm('这个消息弹窗是文字+OK+Cancel按钮')
+pyautogui.prompt('这个消息弹窗是让用户输入字符串，单击OK')
+
+path.replace(&quot;\\&quot;, &quot;/&quot;) #将路径中的\转成/，解决路径转义问题
+
+random.choice(png_list) # 从列表中随机取1个元素
+random.choices(png_list, k=20) # 从列表中随机截取20个元素，返回一个新列表接收
+random.randint(0,4) # 获取一个范围的随机整数，包头包尾
+
+with open(&quot;text.txt&quot;,&quot;w&quot;) as f: # 读取文本、分割符号、&quot;r&quot;read读取，&quot;x&quot;读取.若无文件则生成,&quot;w&quot;写文件,&quot;a&quot;追加内容
+    f = f.strip() # 去除前后空行
+    f_list = f.split(&quot;,&quot;) # 用，分割字符
+    f1 = f_list[1] # 取下标
+
+a=[]
+a.pop() # 将a列表最后一位移除，可赋值给变量，加(1)下标可移除指定元素
+b.strip() # 可以去掉前后的空格、Tab等等
+
+# 让Python播放声音，库名winsound
+winsound.PlaySound('D:\PyCharm\music\yuri.wav', winsound.SND_FILENAME)
+
+# 一行代码：浏览器DIY 全局修改
+document.body.contentEditable='true';
+
+#四舍五入至整数，后面可定义小数保留位数，无则不处理
+round(3.1415926585,2)
+
+# 计算代码运行时间
+t1=time.time()
+t2=time.time()
+print(t2-t1)
+
+# 按Q键退出程序（CV2的）
+if cv2.waitKey(1) == ord('q'):
+    break
+</code></pre>
+<h2 id="内容模板">内容模板</h2>
+<pre><code class="language-Python">
+</code></pre>
+<h2 id="内容模板-2">内容模板</h2>
+<pre><code class="language-Python">
+</code></pre>
+<h2 id="命令行参数-传参-argparse-参考视频">命令行参数 传参 argparse <a href="https://www.bilibili.com/video/BV1rv4y1H7Vo/">参考视频</a></h2>
+<pre><code class="language-Python"># 1，sys.argv 获取运行py程序时，传递的参数
+import sys
+print(sys.argv) # 新建py文件
+
+# 在命令行中传入参数
+python test3.py haha
+['test3.py', 'haha'] #结果，以空格分割，第1个为调用py文件本身名称，其它参数依次排序
+
+# 2，argparse 传参, 如 --name --number
+import argparse
+parser = argparse.ArgumentParser('这里可填程序的帮助信息xxx, 可不填') #声明parser
+parser.add_argument(&quot;parg&quot;) # 位置参数，表示第1个出现的参数赋值parg
+parser.add_argument(&quot;--number&quot;, type=int, help=&quot;输入数字&quot;) # 通过 --echo xxx声明的参数，为int类型
+parser.add_argument(&quot;-n&quot;, &quot;--name&quot;, default=&quot;Jack&quot;, help=&quot;名字&quot;)
+#同上 default为默认值, 可添加传参的简写，取值依旧为args.name
+parser.add_argument(&quot;--mode&quot;, action=&quot;store_true&quot;, help='某个模式功能开关 默认False，传参后True, 可改默认default=True')
+
+# 读取命令行参数
+args = parser.parse_args()
+# 调用参数
+print(args)
+print(args.parg) # 位置参数
+print(f&quot;number ={args.number}&quot;)
+print(f&quot;name = {args.name}&quot;)
+
+# 在命令行中传参
+python test3.py --name lisa --number 321
+python test3.py --name=lisa --number=321 # 空格、等于符号均可
+python test3.py --aa 1 --bb 22
+
+# 2023年4月15日14:10:30
+</code></pre>
+<h2 id="排序算法">排序算法</h2>
+<pre><code class="language-Python"># 猴子排序 import random
+def monkey_sort(lst): # 随机生成一个顺序，死循环判断
+    while not is_sorted(lst):
+        random.shuffle(lst)
+    return lst
+def is_sorted(lst): # 判断这个列表是否有序
+    for i in range(len(lst) - 1):
+        if lst[i] &gt; lst[i+1]:
+            return False
+    return True
+</code></pre>
+<h2 id="configini-配置文件-创建读写">config.ini 配置文件 创建/读/写</h2>
+<pre><code class="language-python">import configparser
+
+# 创建 config.ini 文件、或键值，判断文件存在否【os.path.isfile(&quot;config.ini&quot;)】
+config = configparser.ConfigParser()
+config.add_section(&quot;config&quot;) # 添加节
+config.set(&quot;config&quot;, &quot;key&quot;, &quot;value&quot;) # 在指定节，添加 键+值
+with open(&quot;config.ini&quot;, &quot;w&quot;, encoding='utf-8') as configfile: # 将配置写入、覆盖
+	config.write(configfile)
+
+# 写入、修改 config.ini键值内容
+config = configparser.ConfigParser()
+config.read(&quot;config.ini&quot;, encoding='UTF-8') # 读取 INI 文件
+config.set(&quot;My_config&quot;, &quot;key&quot;, My_value) # 修改指定节、键、值
+with open(&quot;config.ini&quot;, &quot;w&quot;, encoding='utf-8') as configfile: # 将配置信息写入到文件中
+    config.write(configfile)
+
+# --- 读取 config.ini 键值内容
+config = configparser.ConfigParser()
+config.read(&quot;config.ini&quot;, encoding='UTF-8') # 读取 INI 文件
+config_items = config.items(&quot;My_config&quot;) # 获取指定节中,所有配置项
+# 返回包含元组的列表，按【节】的索引取值，如 config_data[0][1]，[1][1]，[2][1]...
+for item in items: # for 遍历出该节点下的所有键值对
+    key, value = item
+    print(f&quot;{key}: {value}&quot;)
+
+</code></pre>
+<h2 id="datatxt-数据文件-创建读写">data.txt 数据文件 创建/读/写</h2>
+<pre><code class="language-Python"># --- 创建 / 修改 data.txt 文件
+with open(&quot;data.txt&quot;, &quot;w&quot;, encoding='utf-8') as txt_file: # 将配置写入覆盖到文件
+	txt_data = '测试标题【分隔符】测试淘口令【分隔符】test_time123'
+	# 填入字符串内容，多行可用 \n回车拼接列表 '\n'.join(data)
+	txt_file.write(txt_data) # 写入、覆盖
+# 读取 txt 文件内容
+with open(&quot;data.txt&quot;,mode='r', encoding='utf-8') as f:
+	data = f.read().splitlines() #得到txt全内容的列表，每行1个元素。用for遍历
+	lie_data = data.split('【分隔符】') #按分隔符切片，返回列表
+
+</code></pre>
+<h2 id="读写文件-video-link">读写文件 <a href="https://www.bilibili.com/video/BV19o4y1Q75E">Video Link</a></h2>
+<pre><code class="language-Python">f = open(&quot;text.txt&quot;,x) # &quot;r&quot;表示read读取，&quot;x&quot;表示读取，若无 则生成。&quot;w&quot;写文件，&quot;a&quot;追加内容
+f.close() # 关闭文件，有打开必须有关闭
+
+f.read # 读取整个文件，加(10)表示只读前10个字符串，用for遍历可取每一行
+f.readline # 只读一行
+f.write(&quot;Hello World!&quot;) # 写入内容并覆盖
+f.writelines(&quot;Hello python 222&quot;) # 写入（未知
+
+os.remove(&quot;text.txt&quot;) # 用os库删除文件
+
+</code></pre>
+<h2 id="脚本控制-常用代码">脚本控制 常用代码</h2>
+<pre><code class="language-Python">def run(): # 判断鼠标位置，控制脚本是否终止
+    now_x, now_y = pyautogui.position() # 获取记录鼠标当前位置
+    if now_x &lt;30 and now_y &lt; 30: # 比对条件，如鼠标移动某个位置，则触发，示例为左上角30像素内
+        return False
+    return True
+while run(): # 让每次循环，都符合预定的条件，否则循环off
+while pyautogui.onScreen(pyautogui.position()): #条件死循环：当鼠标在主显示器内时为true，屏幕外为false，用于判断条件
+
+exit() # 停止整个脚本运行
+break # 跳出/结束 整个循环，不影响 if判断
+continue # 跳过 本次循环
+
+</code></pre>
+<h2 id="仿按键精灵_找色_找图">仿按键精灵_找色_找图</h2>
+<pre><code class="language-python"># 找色 # 根据坐标取色，注意：坐标+颜色均为(元组)的形式传入
+单人游戏 = pyautogui.screenshot().getpixel((x, y))  
+    if 单人游戏 == (107, 16, 16):
+    pyautogui.click(x, y) # 点击该坐标
+    #pyautogui.moveTo(x,y) # 移动鼠标位置
+
+# 找图 # 填入非中文的 绝对路径，相似度0.8
+变量名 = pyautogui.locateOnScreen(&quot;D:\PyCharm\image\a.png&quot;,confidence=0.8)
+if 变量名 is not None: # 判断查找后的值是否 不是空的
+    x,y=pyautogui.center(变量名) # 将图片的坐标赋值
+    print(&quot;已找到图标&quot;)
+    print(x, y) # 打印该坐标
+    pyautogui.leftClick(x, y) # 点击该坐标
+</code></pre>
+<hr>
+<h2 id="列表推导式-三元运算">列表推导式、三元运算</h2>
+<pre><code class="language-Python"># 常用写法
+a=1
+print('OK成立') if a==1 else print('NO不成立') # 【成立 判断 不成立】，三段式结构
+变量 = &quot;OK_True&quot; if a==1 else &quot;NO_False&quot; # 变量赋值 = 【成立 判断 不成立】
+# 套娃写法
+pyint('OK') if 条件2==1 else print('NO') if 条件1==1 else print('条件1 is NO')
+# 条件成立时，可以继续套娃下去，但代码可读性极差
+</code></pre>
+<h2 id="循环条件鼠标移除显示器则为false">循环条件，鼠标移除显示器则为False</h2>
+<pre><code>
+</code></pre>
+<h2 id="遍历txt文本并逐行比对案例冰天有多少树">遍历txt文本，并逐行比对，案例：冰天有多少树</h2>
+<pre><code class="language-python">map=open(&quot;冰天雪地.map&quot;)
+a=1
+for list in map:
+    if &quot;TREE&quot; in list:
+        print(&quot;计次&quot;,a,&quot;:&quot;,list,end=&quot;&quot;)
+        a+=1
+map.close() # 关闭文件
+</code></pre>
+<h2 id="时间库-timedatetime-定时脚本">时间库 time/datetime <a href="https://blog.csdn.net/t8116189520/article/details/78832548">定时脚本</a></h2>
+<pre><code class="language-python">time.sleep(1) # 延时 1秒
+now = datetime.datetime.now() # 获取当前时间
+print(now.hour,now.minute) # 获取当前小时、分钟时间，可用于判断，
+</code></pre>
+<h2 id="用bat打开python脚本-路径非中文">用BAT打开.python脚本 路径非中文</h2>
+<pre><code class="language-bat">@echo off  
+D:
+cd D:\PyCharm
+start python huoyue.py
+exit 
+// bat批处理代码，D盘下路径和文件名
+</code></pre>
+<h2 id="os-系统库-打开文件">OS 系统库 打开文件</h2>
+<pre><code class="language-python">
+os.MessageBox(&quot;hello world弹窗&quot;)
+
+# https://www.bilibili.com/video/BV1Fa411m7Uq
+for a,b,c in os.walk(path): # http://t.csdn.cn/RvLAD
+    # 遍历指定路径，并用abc接收，a=当前绝对路径，b=当前文件夹名list，c=文件名list
+path.isfile(path) # 布尔值,判断是否为文件，排除文件夹，搭配判断后缀
+file_path.endswith(&quot;.txt&quot;) # 用于判断该文件的后缀拓展名，返回布尔值
+os.path.splitext(path) #剪路径分割成2个参数,方便判断文件后缀，&quot;c:\\text&quot;,&quot;.txt&quot;
+os.path.splitdrive(path) #将绝对路径按盘符分割成两个参数,&quot;c:&quot;,&quot;\\text.txt&quot;
+
+os.path.join(png_path, png_file) # 将文件目录和文件名拼接在一起，得出一个文件路径参数
+os.path.dirname(path) # 获取该文件的目录,不含文件名
+os.path.split(path) # 获取该文件目录+文件名，分割为两个参数
+
+os.remove(path) #删除指定文件, 需有删除权限,并文件无只读等属性,或用chdir(path)可以改变权限
+os.rename(&quot;c:\\text1.txt&quot;,&quot;c:\\text2.txt&quot;) # 文件改名，改路径则为移动文件，若无文件/已存在则抛出异常，不可跨盘符
+os.replace(old,new) #同上改名/移动，但目标存在则覆盖，不跨盘
+
+os.isdir(path) # 判断path是否为文件夹
+os.isfile(path) # 判断path是否为文件
+os.exists(&quot;text.txt&quot;) # 判断具体路径  或文件是否存在，返回布尔值，填绝对/相对路径和文件名
+os.listdir(path) # 返回path目录下的文件和列表，列表形式，填空则为当前目录
+
+os.system(&quot;D:\PyCharm\music\yuri.wav&quot;) # 使用系统软件打开各种文件
+os.system('D:/BBC-an-Zhuang/RA2/RUN.bat') # 打开BAT文件-注意反斜杠/除号
+os.startfile(r&quot;C:\install\文件.exe&quot;)  # 打开程序、.py和文件等，填入绝对路径，加r不用转义\
+</code></pre>
+<h2 id="玩家输入input请输入">玩家输入=input('请输入...')</h2>
+<pre><code class="language-python">玩家输入 = input('请输入...')
+if 玩家输入 != '':
+    break # 当玩家没有输入内容时，按了回车，则传进参数为空，实现任意按键结束
+</code></pre>
+<h2 id="pyautogui库常用命令-链接脚本之家文章链接">Pyautogui库常用命令 <a href="https://blog.csdn.net/hange521/article/details/105184541/">【链接】</a>，<a href="https://www.jb51.net/article/183926.htm">【脚本之家文章链接】</a></h2>
+<pre><code class="language-python"># 基础命令
+pyautogui.PAUSE=1 # pyautogui相关的命令延迟1秒，不建议使用
+pyautogui.FAILSAFE=True # 启用防故障
+
+pyautogui.onScreen(x, y) # 判断(x,y)是否在屏幕上，返回结果为布尔值，真假
+
+width, height = pyautogui.size() # 屏幕的宽度和高度
+print(width, height)
+pyautogui.moveTo(width/2,height/2) # 移动鼠标至屏幕中间
+
+</code></pre>
+<ul>
+<li>
+<h3 id="鼠标命令">鼠标命令：</h3>
+</li>
+</ul>
+<pre><code class="language-python">pyautogui.click() # .click鼠标单击 .doubleClick双击 .rightClick右击
+pyautogui.click(x=100, y=200, duration=2)  # duration=2 移动周期2秒
+pyautogui.doubleClick()  # 鼠标当前位置左击两下-双击
+
+pyautogui.moveTo(x,y)  # 移动鼠标至该坐标
+pyautogui.moveTo(x,y,duration=1)  # 移动鼠标过程中，周期为1秒
+# 移动鼠标的命令都可以使用移动时间周期命令，模拟线性移动，非瞬间移动
+pyautogui.moveRel(100,50) # 相对移动
+now_pos=pyautogui.position() # 获取记录鼠标当前位置
+
+pyautogui.mouseDown()
+pyautogui.mouseUp()  # 【按下 / 松开】鼠标左键
+
+</code></pre>
+<ul>
+<li>
+<h3 id="键盘命令">键盘命令：</h3>
+</li>
+</ul>
+<pre><code class="language-python">pyautogui.typewrite('Hello world!') # 输入Hello world!字符串
+pyautogui.typewrite('Hello world!', interval=0.1) #输入间隔x秒,限英文+符号,模拟键盘
+pyautogui.press('enter') # 按下并松开，可设置多次和间隔，例(&quot;esc&quot;,5,0.2)按5次隔0.2
+pyautogui.press(['left', 'left', 'left', 'left']) # 按下并松开（轻敲）四下左方向键
+
+pyautogui.keyDown('shift') # 按下。这里可用于多键组合，或连续组合键
+pyautogui.press('4')
+pyautogui.keyUp('shift') # 抬起，组合键：输出 $ 符号的按键
+pyautogui.hotkey('ctrl', 'v') # 组合按键（Ctrl+V）粘贴功能，按下并松开'ctrl'和'v'按键
+
+</code></pre>
+<ul>
+<li>
+<h3 id="找色">找色</h3>
+</li>
+</ul>
+<pre><code class="language-python">变量名 = pyautogui.screenshot().getpixel((x,y)) # 传入坐标为元组
+if 变量名 == (255,255,255): # 得到的RGB 颜色也是元组
+    print(&quot;找到色了&quot;)
+
+pyautogui.locateOnScreen('Part.png', region=(0, 0, 600, 800))  # region：缩小查找区域，可提升找图速度 (已忘记-待定)
+</code></pre>
+<ul>
+<li>
+<h3 id="弹窗">弹窗</h3>
+</li>
+</ul>
+<pre><code class="language-python">pyautogui.alert(text='⚠️这是一段警告!!!!!!', title='alert 测试', button='OK')
+</code></pre>
+<h3 id="keyboard">keyboard</h3>
+<p><a href="https://coco56.blog.csdn.net/article/details/107847467">键盘监听等待按键</a><br>
+<a href="https://blog.csdn.net/weixin_51802807/article/details/121179861">按键说明</a></p>
+<pre><code class="language-python">keyboard.type_string('Hello, World!')  #输入字符
+keyboard.tap_key('H') 						# 点击H键
+keyboard.tap_key('H', n=2, interval=5) 		# 点击H键2次，每次间隔5秒
+keyboard.tap_key(keyboard.numpad_keys[5])   # 点击小键盘5
+keyboard.tap_key(keyboard.function_keys[5]) # 点击功能键F5
+
+keyboard.press_key(keyboard.alt_key)   # 按住Alt键
+keyboard.tap_key(keyboard.tab_key) 	   # 点击Tab键
+keyboard.release_key(keyboard.alt_key) # 松开Alt键，组合键同时按 Alt + Tab
+
+</code></pre>
+<h4 id="其它键盘按键参考小鹏同学公号链接">【其它键盘按键参考，小鹏同学】<a href="https://mp.weixin.qq.com/s/s2cDsD0f-orJpydYB_sHXg">公号链接</a></h4>
+<hr>
+<h3 id="pygame-键盘按键事件_-参考链接">pygame 键盘按键事件_ <a href="https://www.it610.com/article/1280841738579099648.htm">参考链接</a></h3>
+<pre><code class="language-python"># 获取事件，比如按键等
+for event in pygame.event.get():
+    # 判断是否是点击了退出按钮
+    if event.type == QUIT:
+        print(&quot;exit&quot;)
+        exit()
+    # 判断是否是按下了键
+    elif event.type == KEYDOWN:
+        # 检测按键是否是a或者left
+        if event.key == K_a or event.key == K_LEFT:
+            print('left')
+        # 检测按键是否是d或者right
+        elif event.key == K_d or event.key == K_RIGHT:
+            print('right')
+        # 检测按键是否是w或者up
+        elif event.key == K_w or event.key == K_UP:
+            print(&quot;up&quot;)
+        # 检测按键是否是s或者down
+        elif event.key == K_s or event.key == K_DOWN:
+            print(&quot;down&quot;)
+        # 检测按键是否是空格键
+        elif event.key == K_SPACE:
+            print('space')
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[开源项目 - 算法]]></title>
+        <id>https://supermoon-plus.github.io/post/kai-yuan-xiang-mu-suan-fa/</id>
+        <link href="https://supermoon-plus.github.io/post/kai-yuan-xiang-mu-suan-fa/">
+        </link>
+        <updated>2023-01-04T15:34:06.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="其它开源项目">其它开源项目：</h3>
+<blockquote>
+<p>一些软件、网页等 开源项目记录在这里<br>
+to obs，更新2023年4月15日</p>
+</blockquote>
+<hr>
+<h1 id="搜集项目导航页">搜集项目导航页</h1>
+<h3 id="github的开源算法项目收藏集"><a href="https://github.com/axinc-ai/ailia-models">GitHub的开源算法项目收藏集</a></h3>
+<h3 id="网址导航页-源码-github-案例-聚bt">网址导航页 源码 <a href="https://github.com/WebStackPage/WebStackPage.github.io">GitHub</a> - <a href="https://jubt.top/">案例: 聚BT</a></h3>
+<hr>
+<h3 id="其它搜集开源项目的合集">其它搜集开源项目的合集</h3>
+<ul>
+<li><a href="https://github.com/Wechat-ggGitHub/Awesome-GitHub-Repo">【Awesome Github REPO】收集整理GitHub高质量有趣的开源项目，并归类</a></li>
+<li><a href="https://github.com/vinta/awesome-python">【awesome-python】很棒的 Python 框架、库、软件和资源的精选列表。</a></li>
+<li><a href="https://www.futurepedia.io/">【最大的 AI 工具目录】</a></li>
+<li>【中文类 ChatGPT】高质量中文开源类 ChatGPT 项目、模型、数据 收集  https://github.com/lonePatient/awesome-pretrained-chinese-nlp-models</li>
+<li>ChatGPT 中文指南, 相关内容 https://github.com/yzfly/awesome-chatgpt-zh</li>
+</ul>
+<hr>
+<h1 id="开源算法-项目搜集">开源算法、项目搜集:</h1>
+<blockquote>
+<p>一些牛逼的开源算法记录在这里</p>
+</blockquote>
+<hr>
+<h4 id="标题-文章-github">【标题】 <a href="">【文章】</a> / <a href="">【GitHub】</a></h4>
+<h4 id="标题-文章-github-2">【标题】 <a href="">【文章】</a> / <a href="">【GitHub】</a></h4>
+<h4 id="标题-文章-github-3">【标题】 <a href="">【文章】</a> / <a href="">【GitHub】</a></h4>
+<h4 id="标题-文章-github-4">【标题】 <a href="">【文章】</a> / <a href="">【GitHub】</a></h4>
+<hr>
+<h1 id="综合">综合</h1>
+<h4 id="pikafish-皮卡鱼-一个免费的-强大的-uci-象棋引擎2022年最强的免费象棋ai-官网-github-b站教程-2022年10月">【Pikafish 皮卡鱼 ++】一个免费的、强大的 UCI 象棋引擎（2022年最强的免费象棋ai） <a href="http://pikafish.org/">【官网】</a> / <a href="https://github.com/PikaCat-OuO/Pikafish">【GitHub】</a> / <a href="https://www.bilibili.com/video/BV15d4y1i7iL">【B站教程】</a> 2022年10月</h4>
+<h4 id="ai秒杀大部分验证码-ocr-视频video-github">【AI秒杀大部分验证码 OCR】 <a href="https://www.bilibili.com/video/BV1Ku411i7dN">视频Video</a> / <a href="https://github.com/sml2h3/ddddocr">GitHub</a></h4>
+<h4 id="tandem拍摄生成3d重建生成三维空间模型-bili-video-github">【TANDEM】拍摄生成3D重建生成三维空间模型 <a href="https://www.bilibili.com/video/BV1Vh411b723">Bili Video</a> / <a href="https://github.com/tum-vision/tandem">GitHub</a></h4>
+<hr>
+<h1 id="图像">图像</h1>
+<h4 id="novelai-二次元ai绘画模型泄露泄露模型并非开源-下载视频-标签词库tag">【NovelAi ++】二次元AI绘画模型泄露（泄露模型并非开源） <a href="https://www.bilibili.com/video/BV1414y1W7QZ/">【下载视频】</a> / <a href="https://ai.dawnmark.cn/">标签词库Tag</a></h4>
+<h4 id="vtoonify视频图片-转卡通风格风格转移-github-2022年9月">【VToonify】视频图片 转卡通风格，风格转移  <a href="https://github.com/williamyang1991/VToonify">【Github】</a> 2022年9月</h4>
+<h4 id="dct-net人像图片格迁移算法卡通动漫等-github-2022年6月">【DCT-Net】人像图片格迁移算法，卡通动漫等 <a href="https://github.com/menyifang/DCT-Net#">【GitHub】</a> 2022年6月</h4>
+<h4 id="pytranscriber语音转文字-str字幕效果不行官网-github"><s>【pyTranscriber】语音转文字、str字幕</s>（效果不行）<a href="https://pytranscriber.github.io/">【官网】</a> / <a href="https://github.com/raryelcostasouza/pyTranscriber">GIthub</a></h4>
+<h4 id="articulated-animation用照片根据视频人物生成相同动作-github">【articulated-animation】用照片根据视频人物生成相同动作 <a href="https://github.com/snap-research/articulated-animation">Github</a></h4>
+<h4 id="lama-cleaner类似ps的图像污点修复-去除水印物体-video-github">【Lama Cleaner】类似PS的图像污点修复、去除水印物体 <a href="https://www.bilibili.com/video/BV1va411G7be">Video</a> / <a href="https://github.com/Sanster/lama-cleaner">GitHub</a></h4>
+<h4 id="隐身术ai去除人物-遮挡-物体等-公号文章-github-2021">【隐身术】Ai去除人物、遮挡、物体等   <a href="https://mp.weixin.qq.com/s?__biz=MzIxODg1OTk1MA==&amp;mid=2247498877&amp;idx=1&amp;sn=337ec8e75f9ef9cd082520b00c2c8c36&amp;chksm=97e6acbca09125aaa7fcb62ec25763016c880b995352107d643deb7947a44910710336bdbf0a&amp;scene=21#wechat_redirect">公号文章</a> / <a href="https://github.com/saic-mdal/lama">GitHub</a> 2021</h4>
+<h4 id="生成卡通风格头像-公号文章-github">【生成卡通风格头像】 <a href="https://mp.weixin.qq.com/s?__biz=MzIxODg1OTk1MA==&amp;mid=2247497996&amp;idx=1&amp;sn=e5b5b9992b4be585216f45c7b29a04ef&amp;chksm=97e6a9cda09120db966059d5da89bf7b9a261d4143c3ff136a78218744d0eeea5c61e68ee95f&amp;scene=21#wechat_redirect">公号文章</a> / <a href="https://github.com/wonjongg/StyleCariGAN">GitHub</a></h4>
+<h4 id="让图片-跟着表情动起来前段时间超火的蚂蚁牙黑算法-公号文章-github">【让图片 跟着表情动起来】前段时间超火的&quot;蚂蚁牙黑&quot;算法。  <a href="https://mp.weixin.qq.com/s?__biz=MzIxODg1OTk1MA==&amp;mid=2247485548&amp;idx=1&amp;sn=4f2834743dd6a44d7e4968467ef20f73&amp;scene=21#wechat_redirect">公号文章</a> / <a href="https://github.com/anandpawara/Real_Time_Image_Animation">GitHub</a></h4>
+<h4 id="二次元动漫图超分辨率重建-修复模糊图像-bili-video-github">【二次元动漫图】超分辨率重建 修复模糊图像。 <a href="https://www.bilibili.com/video/BV14R4y1g7qs">bili Video</a> / <a href="https://github.com/xinntao/Real-ESRGAN">GitHub</a></h4>
+<h4 id="pulse-去除人脸照片马赛克图像超分辨率模型文章-github">【PULSE】 去除人脸照片马赛克，图像超分辨率模型<a href="https://baijiahao.baidu.com/s?id=1670792480660456074&amp;wfr=spider&amp;for=pc">文章</a> / <a href="https://github.com/adamian98/pulse">GitHub</a></h4>
+<h4 id="frame-interpolation把两个相似图片插帧生成移动视频-bili-video-demo-github">【Frame Interpolation】把两个相似图片插帧生成移动视频 <a href="https://www.bilibili.com/video/BV1nS4y1r7p1">Bili Video demo</a> / <a href="https://github.com/google-research/frame-interpolation">GitHub</a></h4>
+<h4 id="腾讯老照片修复算法开源-文章介绍-github">【腾讯老照片修复算法开源】 <a href="https://mp.weixin.qq.com/s/G1vCQ4LDlFfmma-IkBk9UA">文章介绍</a> - <a href="https://github.com/TencentARC/GFPGAN">GitHub</a></h4>
+<h4 id="人脸图像修复神器-去除遮挡-口罩-缺失等等-github">【人脸图像修复神器 +】去除遮挡、口罩、缺失等等 <a href="https://github.com/andreas128/RePaint">GitHub</a></h4>
+<hr>
+<h1 id="视频">视频</h1>
+<h4 id="wav2lip-输入音频把一段视频人物口型对齐声音">Wav2Lip 输入音频把一段视频人物口型对齐声音</h4>
+<h4 id="视频换图实时仿真合成视频把图片视频贴在视频里无违和感-video-文章-github">【视频换图】实时仿真合成视频，把图片/视频，贴在视频里无违和感。 <a href="https://www.bilibili.com/video/BV1HV4y1V75e/">Video</a> / <a href="https://drinkingcoder.github.io/publication/neuralmarker/">文章</a> / <a href="https://github.com/drinkingcoder/NeuralMarker">GitHub</a></h4>
+<h4 id="cvpr2022视频图片消除拍摄屏幕产生的条纹噪点-video-发布页-github">【CVPR2022】视频/图片，消除拍摄屏幕产生的条纹噪点 <a href="https://www.bilibili.com/video/BV1ue4y1E7xZ">Video</a> / <a href="https://daipengwa.github.io/VDmoire_ProjectPage/">发布页</a> / <a href="https://github.com/CVMI-Lab/VideoDemoireing">GitHub</a></h4>
+<h4 id="摄像头捕捉面部-人体驱动虚拟形象-公号文章-github">【摄像头捕捉面部、人体，驱动虚拟形象】 <a href="https://mp.weixin.qq.com/s?__biz=MzIxODg1OTk1MA==&amp;mid=2247501355&amp;idx=1&amp;sn=8c87a94e4440d984d786e10ec637e79f&amp;chksm=97e696eaa0911ffc68870a5efaeff81c22d2dc217f457ffbb5d10d8de7c45fe73e2a1c760c02&amp;scene=21#wechat_redirect">公号文章</a> / <a href="https://github.com/yeemachine/kalidokit">GitHub</a></h4>
+<h4 id="视频高清抠像工具-rvm-by字节跳动-bili-video-github-colab文章">【视频高清抠像工具 ++】 RVM by字节跳动 <a href="https://www.bilibili.com/video/BV1Z3411B7g7">Bili Video</a> / <a href="https://github.com/PeterL1n/RobustVideoMatting/blob/master/README_zh_Hans.md">GitHub</a> / <a href="https://openbayes.com/console/open-tutorials/containers/oqv42tbd8ko">Colab文章</a></h4>
+<h1 id="声音">声音</h1>
+<h4 id="uvr5-ultimate-vocal-remover-gui-最强伴奏人声提取分离工具模型-b站视频-github-2022年12月14日">【UVR5 ++】Ultimate Vocal Remover GUI 最强伴奏人声提取分离工具模型  <a href="https://www.bilibili.com/video/BV1ga411S7gP/">【B站视频】</a> / <a href="https://github.com/Anjok07/ultimatevocalremovergui/blob/master/README_CN.md">【GitHub】</a> 2022年12月14日</h4>
+<p>B站视频评论区【DJ丶Se7en】：长时间测试得出的结果,模型里7_HP2最好最纯的伴奏。4_HP最好的人声。6_HP Karaoke和声伴奏(听感最佳)。关闭降噪。</p>
+<h4 id="飞浆-paddlepaddle语音方向的开源模型库-声音合成视频案例-github">【飞浆 PaddlePaddle】语音方向的开源模型库 <a href="https://www.bilibili.com/video/BV1SP411c7Xc/">【声音合成视频案例 +】</a> / <a href="https://github.com/PaddlePaddle/PaddleSpeech">【GitHub】</a></h4>
+<h4 id="buzz基于-openai-whisper-的开源-可离线的实时语音转文字工具-github">【Buzz】基于 OpenAI Whisper 的开源、可离线的实时语音转文字工具 <a href="https://github.com/chidiwilliams/buzz">【GitHub】</a></h4>
+<h4 id="whisper大型通用的语音识别模型-英语以及多语言-huggingface-github">【Whisper】大型通用的语音识别模型, 英语以及多语言 <a href="https://huggingface.co/spaces/openai/whisper">【Huggingface】</a> / <a href="https://github.com/openai/whisper">【GitHub】</a></h4>
+<h4 id="音乐分轨人声-乐器等deezer源效果一般-2021-9-github">【音乐分轨】人声-乐器等（Deezer源）效果一般 2021-9 <a href="https://github.com/deezer/spleeter">GitHub</a></h4>
+<h4 id="用ai算法分割出音乐和人声demucs-音乐源模型-video-github-官网download-huggingface-demo">【用AI算法分割出音乐和人声】（Demucs 音乐源）模型  <a href="https://www.bilibili.com/video/BV1kd4y1N7Mr">Video</a> / <a href="https://github.com/facebookresearch/demucs/">GitHub</a> / <a href="https://www.stemroller.com/">官网download</a> / <a href="https://huggingface.co/spaces/akhaliq/demucs">HuggingFace-demo</a></h4>
+<h4 id="人工智能作曲github">【人工智能作曲】<a href="https://github.com/microsoft/muzic">GitHub</a></h4>
+<h4 id="中文-实时声音克隆-公号文章-github">【中文 实时声音克隆】 <a href="https://mp.weixin.qq.com/s?__biz=MzIxODg1OTk1MA==&amp;mid=2247498145&amp;idx=1&amp;sn=a254f3f626aebb9a8b952d1e7352f8d6&amp;chksm=97e6a960a09120762e717a90adce502235b76e1e2185933596bc5345103feeb4d9a9ce2cb8c3&amp;scene=21#wechat_redirect">公号文章</a> / <a href="https://github.com/babysor/MockingBird/blob/main/README-CN.md">GitHub</a></h4>
+<hr>
+<h1 id="目标识别">目标识别</h1>
+<h4 id="paddleclas飞桨图像分类识别套件-github">【PaddleClas】飞桨图像分类识别套件  <a href="https://github.com/PaddlePaddle/PaddleClas">GitHub</a></h4>
+<p>134个预训练模型，人、车、OCR等9大超轻量图像分类场景模型全开源！！<br>
+飞桨为工业界和学术界所准备的一个图像识别和图像分类任务的工具集，助力使用者训练出更好的视觉模型和应用落地。</p>
+<h4 id="yolo-标注数据图像增强软件-up主啥都生-github">YOLO 标注数据图像增强软件-up主啥都生 <a href="https://github.com/Fafa-DL/Image-Augmentation">GitHub</a></h4>
+<h4 id="yolov7-图像分割车辆计数-github">YOLOv7 图像分割，车辆计数 <a href="https://github.com/krisnarengga/yolov7-image-segmentation">GitHub</a></h4>
+<h4 id="人脸识别face_recognition离线识别率高达99以上-github-cn">【人脸识别Face_Recognition】离线识别率高达99%以上！ <a href="https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md">GitHub-CN</a></h4>
+<p>本项目<a href="https://github.com/ageitgey/face_recognition">face_recognition</a> 是一个强大、简单、易上手的人脸识别开源项目，并且配备了完整的开发文档和应用案例，特别是兼容树莓派系统。</p>
+<ul>
+<li>【用OpenCV实现衣服缺陷、污渍、破损检测 方法+代码】 <a href="https://mp.weixin.qq.com/s/C448SRE7yFyJDV46w7zh8w">公号文章</a></li>
+</ul>
+<h4 id="轻量级目标检测-yolo-fastest-知乎文章-github">【轻量级目标检测】 Yolo-Fastest  <a href="https://zhuanlan.zhihu.com/p/234506503">知乎文章</a> - <a href="https://github.com/dog-qiuqiu/Yolo-Fastest">GitHub</a></h4>
+<p>超快开源ARM实时目标检测算法，总结特性：简单、快速、紧凑、易于移植、占用少、单核性能优异、功耗低、0.3%的精度损失换30%速度提升，减少25%参数量、训练快、算力要求低、训练只需3GB显存</p>
+<hr>
+<hr>
+<h1 id="数据集">数据集</h1>
+<h4 id="海量公开数据集90深度学习开源数据集整理-人-物-景-状态等数据-link">【海量公开数据集】90+深度学习开源数据集整理。人、物、景、状态等数据 <a href="https://www.cvmart.net/dataSets">Link</a></h4>
+<h4 id="飞浆公开数据集-官网">【飞浆公开数据集】 <a href="https://aistudio.baidu.com/aistudio/datasetoverview">【官网】</a></h4>
+<hr>
+<h2 id="其它小工具">其它小工具</h2>
+<ul>
+<li><a href="https://github.com/OpenEthan/SMSBoom">短信Boom GitHub</a></li>
+<li><a href="https://github.com/Genymobile/scrcpy">【Scrcpy】安卓手机屏幕镜像</a></li>
+</ul>
+<hr>
+<blockquote>
+<p>2022年6月12日 创建<br>
+2022年6月13日 补充<br>
+2022年12月14日 补充、分类</p>
+</blockquote>
+<hr>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Python 第三方库-收集]]></title>
+        <id>https://supermoon-plus.github.io/post/python-ku-ji-lu/</id>
+        <link href="https://supermoon-plus.github.io/post/python-ku-ji-lu/">
+        </link>
+        <updated>2023-01-04T15:33:53.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="python-库记录">Python 库记录</h1>
+<blockquote>
+<p>同步至 Obsidian 2023 年 3 月 22 日</p>
+</blockquote>
+<p>图像 PIL 库的基础用法笔记<br>
+<a href="https://www.jb51.net/article/225452.htm">1使用详解</a> / <a href="https://blog.csdn.net/zhangziju/article/details/79123275">2各模块介绍</a> / <a href="https://blog.csdn.net/qq_37816453/article/details/80434150">3格式转换</a></p>
+<hr>
+<h3 id="键鼠控制">键鼠控制</h3>
+<ul>
+<li>【PyAutogui】鼠标键盘控制，找图找色等等</li>
+<li>【keyboard】键鼠控制，监听键盘响应等等 <a href="https://blog.csdn.net/weixin_51802807/article/details/121179861">【使用说明】</a> <a href="https://coco56.blog.csdn.net/article/details/107847467">【监听键盘】</a></li>
+</ul>
+<h3 id="窗口">窗口</h3>
+<ul>
+<li>【Tkinter】简单小巧，Python 自带标准库，官方推荐 GUI 工具包 <a href="http://c.biancheng.net/tkinter/">【相关文章】</a></li>
+<li>【pyside2】开放版的 QT5</li>
+<li>【PyQT5】</li>
+</ul>
+<h3 id="图像">图像</h3>
+<ul>
+<li>【pillow】图片处理，功能丰富，简单易用 <a href="http://c.biancheng.net/pillow/">【相关文章】</a></li>
+<li>【opencv-python】非常强大的图片、图像处理库</li>
+<li>【PyGame】Python 的游戏库</li>
+<li>【Wordcloud】生成词云图 <a href="https://blog.csdn.net/qq_48003414/article/details/117427378">【文章】</a></li>
+</ul>
+<h3 id="其他">其他</h3>
+<ul>
+<li>【PyInstaller】打包 Python 程序 <a href="https://github.com/750ti/DIY-Pyinstaller-embed">【我的GitHub说明】</a></li>
+<li>【Django】免费开源的 Web 框架，可用于快速搭建高性能优雅的网站 <a href="http://c.biancheng.net/django/">【相关文章】</a></li>
+<li>【NumPy】Python 科学计算的基础包。<a href="http://c.biancheng.net/numpy/">【相关文章】</a></li>
+<li>【Matplotlib】受欢迎的数据可视化软件包，Python 常用的 2D 绘图库，同时它也提供了一部分 3D 绘图接口。<a href="http://c.biancheng.net/matplotlib/">【文章】</a></li>
+<li>【Pandas】一个免费、开源的第三方 Python 库，是 Python 数据分析必不可少的工具之一，它为 Python 数据分析提供了高性能，且易于使用的数据结构。<a href="http://c.biancheng.net/pandas/">【文章】</a></li>
+<li>pywin32</li>
+</ul>
+<pre><code class="language-python"># 常见安装命令，清华源
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PyAutogui
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pillow
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PyGame
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple Wordcloud
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PyInstaller
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple Django
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple NumPy
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple Pandas
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pywin32
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple keyboard
+
+
+
+</code></pre>
+<p>``</p>
+]]></content>
+    </entry>
+</feed>

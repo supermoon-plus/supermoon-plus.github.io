@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Python常用代码命令 | My Blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://supermoon-plus.github.io/favicon.ico?v=1681544735614">
+<link rel="stylesheet" href="https://supermoon-plus.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="Python常用代码集
+更新时间 2023年4月15日
+
+pynput库
+截图 = grab_screen(region=(x1, y1, x2, y2))
+图像PIL库的基础用法笔记
+Link1 / Link2 / Link3
+教程：董付..." />
+    <meta name="keywords" content="code,Python,note" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://supermoon-plus.github.io">
+        <img src="https://supermoon-plus.github.io/images/avatar.png?v=1681544735614" class="site-logo">
+        <h1 class="site-title">My Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/supermoon-plus" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Hi, I am now learning create a Blog, Write Notes and log.
+    </div>
+    <div class="site-footer">
+      print("Hello World") # Updata From 2023年1月6日 | <a class="rss" href="https://supermoon-plus.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Python常用代码命令</h2>
+            <div class="post-date">2023-01-04</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="python常用代码集">Python常用代码集</h1>
+<p>更新时间 2023年4月15日</p>
+<hr>
+<p>pynput库<br>
+截图 = grab_screen(region=(x1, y1, x2, y2))</p>
+<p>图像PIL库的基础用法笔记<br>
+<a href="https://www.jb51.net/article/225452.htm">Link1</a> / <a href="https://blog.csdn.net/zhangziju/article/details/79123275">Link2</a> / <a href="https://blog.csdn.net/qq_37816453/article/details/80434150">Link3</a></p>
+<p>教程：<a href="https://space.bilibili.com/33583863/channel/collectiondetail?sid=142598">董付国老师Python教程合集 Link</a></p>
+<p>安装第三方库时，需要关闭代理 <code>Off Free internet</code></p>
+<p>【升级pip】<br>
+<code>python -m pip install --upgrade pip</code></p>
+<p>清华的镜像安装第三方库，如OpenCV<br>
+<code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python</code></p>
+<p>批量安装-清华源<br>
+<code>pip install -r requirements. txt -f https://pypi.tuna.tsinghua.edu.cn/simple/</code></p>
+<p>卸载第三方库<br>
+<code>pip uninstall numpy</code></p>
+<p>Conda 恢复默认源<br>
+<code>conda config --remove-key channels</code></p>
+<p><strong>国内镜像源：</strong>  <a href="https://www.bilibili.com/video/BV1WB4y1P7Nk">来源视频：python安装库的4种方式</a><br>
+阿里云： http://mirrors.aliyun.com/pypi/simple/<br>
+中国科技大学： https://pypi.mirrors.ustc.edu.cn/simple/<br>
+豆瓣(douban)： http://pypi.douban.com/simple/<br>
+清华大学： https://pypi.tuna.tsinghua.edu.cn/simple/</p>
+<pre><code class="language-python">https://blog.csdn.net/thy0000/article/details/123563336
+在安装pytorch时，遇到了下面的错误：  
+An HTTP error occurred when trying to retrieve this URL
+
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+conda config --set show_channel_urls yes
+</code></pre>
+<hr>
+<h2 id="记录一些常见代码"><mark>记录一些常见代码</mark> ↓</h2>
+<pre><code class="language-Python">
+
+# PyAutoGui 的弹窗
+pyautogui.alert('这个消息弹窗是文字+OK按钮')
+pyautogui.confirm('这个消息弹窗是文字+OK+Cancel按钮')
+pyautogui.prompt('这个消息弹窗是让用户输入字符串，单击OK')
+
+path.replace(&quot;\\&quot;, &quot;/&quot;) #将路径中的\转成/，解决路径转义问题
+
+random.choice(png_list) # 从列表中随机取1个元素
+random.choices(png_list, k=20) # 从列表中随机截取20个元素，返回一个新列表接收
+random.randint(0,4) # 获取一个范围的随机整数，包头包尾
+
+with open(&quot;text.txt&quot;,&quot;w&quot;) as f: # 读取文本、分割符号、&quot;r&quot;read读取，&quot;x&quot;读取.若无文件则生成,&quot;w&quot;写文件,&quot;a&quot;追加内容
+    f = f.strip() # 去除前后空行
+    f_list = f.split(&quot;,&quot;) # 用，分割字符
+    f1 = f_list[1] # 取下标
+
+a=[]
+a.pop() # 将a列表最后一位移除，可赋值给变量，加(1)下标可移除指定元素
+b.strip() # 可以去掉前后的空格、Tab等等
+
+# 让Python播放声音，库名winsound
+winsound.PlaySound('D:\PyCharm\music\yuri.wav', winsound.SND_FILENAME)
+
+# 一行代码：浏览器DIY 全局修改
+document.body.contentEditable='true';
+
+#四舍五入至整数，后面可定义小数保留位数，无则不处理
+round(3.1415926585,2)
+
+# 计算代码运行时间
+t1=time.time()
+t2=time.time()
+print(t2-t1)
+
+# 按Q键退出程序（CV2的）
+if cv2.waitKey(1) == ord('q'):
+    break
+</code></pre>
+<h2 id="内容模板">内容模板</h2>
+<pre><code class="language-Python">
+</code></pre>
+<h2 id="内容模板-2">内容模板</h2>
+<pre><code class="language-Python">
+</code></pre>
+<h2 id="命令行参数-传参-argparse-参考视频">命令行参数 传参 argparse <a href="https://www.bilibili.com/video/BV1rv4y1H7Vo/">参考视频</a></h2>
+<pre><code class="language-Python"># 1，sys.argv 获取运行py程序时，传递的参数
+import sys
+print(sys.argv) # 新建py文件
+
+# 在命令行中传入参数
+python test3.py haha
+['test3.py', 'haha'] #结果，以空格分割，第1个为调用py文件本身名称，其它参数依次排序
+
+# 2，argparse 传参, 如 --name --number
+import argparse
+parser = argparse.ArgumentParser('这里可填程序的帮助信息xxx, 可不填') #声明parser
+parser.add_argument(&quot;parg&quot;) # 位置参数，表示第1个出现的参数赋值parg
+parser.add_argument(&quot;--number&quot;, type=int, help=&quot;输入数字&quot;) # 通过 --echo xxx声明的参数，为int类型
+parser.add_argument(&quot;-n&quot;, &quot;--name&quot;, default=&quot;Jack&quot;, help=&quot;名字&quot;)
+#同上 default为默认值, 可添加传参的简写，取值依旧为args.name
+parser.add_argument(&quot;--mode&quot;, action=&quot;store_true&quot;, help='某个模式功能开关 默认False，传参后True, 可改默认default=True')
+
+# 读取命令行参数
+args = parser.parse_args()
+# 调用参数
+print(args)
+print(args.parg) # 位置参数
+print(f&quot;number ={args.number}&quot;)
+print(f&quot;name = {args.name}&quot;)
+
+# 在命令行中传参
+python test3.py --name lisa --number 321
+python test3.py --name=lisa --number=321 # 空格、等于符号均可
+python test3.py --aa 1 --bb 22
+
+# 2023年4月15日14:10:30
+</code></pre>
+<h2 id="排序算法">排序算法</h2>
+<pre><code class="language-Python"># 猴子排序 import random
+def monkey_sort(lst): # 随机生成一个顺序，死循环判断
+    while not is_sorted(lst):
+        random.shuffle(lst)
+    return lst
+def is_sorted(lst): # 判断这个列表是否有序
+    for i in range(len(lst) - 1):
+        if lst[i] &gt; lst[i+1]:
+            return False
+    return True
+</code></pre>
+<h2 id="configini-配置文件-创建读写">config.ini 配置文件 创建/读/写</h2>
+<pre><code class="language-python">import configparser
+
+# 创建 config.ini 文件、或键值，判断文件存在否【os.path.isfile(&quot;config.ini&quot;)】
+config = configparser.ConfigParser()
+config.add_section(&quot;config&quot;) # 添加节
+config.set(&quot;config&quot;, &quot;key&quot;, &quot;value&quot;) # 在指定节，添加 键+值
+with open(&quot;config.ini&quot;, &quot;w&quot;, encoding='utf-8') as configfile: # 将配置写入、覆盖
+	config.write(configfile)
+
+# 写入、修改 config.ini键值内容
+config = configparser.ConfigParser()
+config.read(&quot;config.ini&quot;, encoding='UTF-8') # 读取 INI 文件
+config.set(&quot;My_config&quot;, &quot;key&quot;, My_value) # 修改指定节、键、值
+with open(&quot;config.ini&quot;, &quot;w&quot;, encoding='utf-8') as configfile: # 将配置信息写入到文件中
+    config.write(configfile)
+
+# --- 读取 config.ini 键值内容
+config = configparser.ConfigParser()
+config.read(&quot;config.ini&quot;, encoding='UTF-8') # 读取 INI 文件
+config_items = config.items(&quot;My_config&quot;) # 获取指定节中,所有配置项
+# 返回包含元组的列表，按【节】的索引取值，如 config_data[0][1]，[1][1]，[2][1]...
+for item in items: # for 遍历出该节点下的所有键值对
+    key, value = item
+    print(f&quot;{key}: {value}&quot;)
+
+</code></pre>
+<h2 id="datatxt-数据文件-创建读写">data.txt 数据文件 创建/读/写</h2>
+<pre><code class="language-Python"># --- 创建 / 修改 data.txt 文件
+with open(&quot;data.txt&quot;, &quot;w&quot;, encoding='utf-8') as txt_file: # 将配置写入覆盖到文件
+	txt_data = '测试标题【分隔符】测试淘口令【分隔符】test_time123'
+	# 填入字符串内容，多行可用 \n回车拼接列表 '\n'.join(data)
+	txt_file.write(txt_data) # 写入、覆盖
+# 读取 txt 文件内容
+with open(&quot;data.txt&quot;,mode='r', encoding='utf-8') as f:
+	data = f.read().splitlines() #得到txt全内容的列表，每行1个元素。用for遍历
+	lie_data = data.split('【分隔符】') #按分隔符切片，返回列表
+
+</code></pre>
+<h2 id="读写文件-video-link">读写文件 <a href="https://www.bilibili.com/video/BV19o4y1Q75E">Video Link</a></h2>
+<pre><code class="language-Python">f = open(&quot;text.txt&quot;,x) # &quot;r&quot;表示read读取，&quot;x&quot;表示读取，若无 则生成。&quot;w&quot;写文件，&quot;a&quot;追加内容
+f.close() # 关闭文件，有打开必须有关闭
+
+f.read # 读取整个文件，加(10)表示只读前10个字符串，用for遍历可取每一行
+f.readline # 只读一行
+f.write(&quot;Hello World!&quot;) # 写入内容并覆盖
+f.writelines(&quot;Hello python 222&quot;) # 写入（未知
+
+os.remove(&quot;text.txt&quot;) # 用os库删除文件
+
+</code></pre>
+<h2 id="脚本控制-常用代码">脚本控制 常用代码</h2>
+<pre><code class="language-Python">def run(): # 判断鼠标位置，控制脚本是否终止
+    now_x, now_y = pyautogui.position() # 获取记录鼠标当前位置
+    if now_x &lt;30 and now_y &lt; 30: # 比对条件，如鼠标移动某个位置，则触发，示例为左上角30像素内
+        return False
+    return True
+while run(): # 让每次循环，都符合预定的条件，否则循环off
+while pyautogui.onScreen(pyautogui.position()): #条件死循环：当鼠标在主显示器内时为true，屏幕外为false，用于判断条件
+
+exit() # 停止整个脚本运行
+break # 跳出/结束 整个循环，不影响 if判断
+continue # 跳过 本次循环
+
+</code></pre>
+<h2 id="仿按键精灵_找色_找图">仿按键精灵_找色_找图</h2>
+<pre><code class="language-python"># 找色 # 根据坐标取色，注意：坐标+颜色均为(元组)的形式传入
+单人游戏 = pyautogui.screenshot().getpixel((x, y))  
+    if 单人游戏 == (107, 16, 16):
+    pyautogui.click(x, y) # 点击该坐标
+    #pyautogui.moveTo(x,y) # 移动鼠标位置
+
+# 找图 # 填入非中文的 绝对路径，相似度0.8
+变量名 = pyautogui.locateOnScreen(&quot;D:\PyCharm\image\a.png&quot;,confidence=0.8)
+if 变量名 is not None: # 判断查找后的值是否 不是空的
+    x,y=pyautogui.center(变量名) # 将图片的坐标赋值
+    print(&quot;已找到图标&quot;)
+    print(x, y) # 打印该坐标
+    pyautogui.leftClick(x, y) # 点击该坐标
+</code></pre>
+<hr>
+<h2 id="列表推导式-三元运算">列表推导式、三元运算</h2>
+<pre><code class="language-Python"># 常用写法
+a=1
+print('OK成立') if a==1 else print('NO不成立') # 【成立 判断 不成立】，三段式结构
+变量 = &quot;OK_True&quot; if a==1 else &quot;NO_False&quot; # 变量赋值 = 【成立 判断 不成立】
+# 套娃写法
+pyint('OK') if 条件2==1 else print('NO') if 条件1==1 else print('条件1 is NO')
+# 条件成立时，可以继续套娃下去，但代码可读性极差
+</code></pre>
+<h2 id="循环条件鼠标移除显示器则为false">循环条件，鼠标移除显示器则为False</h2>
+<pre><code>
+</code></pre>
+<h2 id="遍历txt文本并逐行比对案例冰天有多少树">遍历txt文本，并逐行比对，案例：冰天有多少树</h2>
+<pre><code class="language-python">map=open(&quot;冰天雪地.map&quot;)
+a=1
+for list in map:
+    if &quot;TREE&quot; in list:
+        print(&quot;计次&quot;,a,&quot;:&quot;,list,end=&quot;&quot;)
+        a+=1
+map.close() # 关闭文件
+</code></pre>
+<h2 id="时间库-timedatetime-定时脚本">时间库 time/datetime <a href="https://blog.csdn.net/t8116189520/article/details/78832548">定时脚本</a></h2>
+<pre><code class="language-python">time.sleep(1) # 延时 1秒
+now = datetime.datetime.now() # 获取当前时间
+print(now.hour,now.minute) # 获取当前小时、分钟时间，可用于判断，
+</code></pre>
+<h2 id="用bat打开python脚本-路径非中文">用BAT打开.python脚本 路径非中文</h2>
+<pre><code class="language-bat">@echo off  
+D:
+cd D:\PyCharm
+start python huoyue.py
+exit 
+// bat批处理代码，D盘下路径和文件名
+</code></pre>
+<h2 id="os-系统库-打开文件">OS 系统库 打开文件</h2>
+<pre><code class="language-python">
+os.MessageBox(&quot;hello world弹窗&quot;)
+
+# https://www.bilibili.com/video/BV1Fa411m7Uq
+for a,b,c in os.walk(path): # http://t.csdn.cn/RvLAD
+    # 遍历指定路径，并用abc接收，a=当前绝对路径，b=当前文件夹名list，c=文件名list
+path.isfile(path) # 布尔值,判断是否为文件，排除文件夹，搭配判断后缀
+file_path.endswith(&quot;.txt&quot;) # 用于判断该文件的后缀拓展名，返回布尔值
+os.path.splitext(path) #剪路径分割成2个参数,方便判断文件后缀，&quot;c:\\text&quot;,&quot;.txt&quot;
+os.path.splitdrive(path) #将绝对路径按盘符分割成两个参数,&quot;c:&quot;,&quot;\\text.txt&quot;
+
+os.path.join(png_path, png_file) # 将文件目录和文件名拼接在一起，得出一个文件路径参数
+os.path.dirname(path) # 获取该文件的目录,不含文件名
+os.path.split(path) # 获取该文件目录+文件名，分割为两个参数
+
+os.remove(path) #删除指定文件, 需有删除权限,并文件无只读等属性,或用chdir(path)可以改变权限
+os.rename(&quot;c:\\text1.txt&quot;,&quot;c:\\text2.txt&quot;) # 文件改名，改路径则为移动文件，若无文件/已存在则抛出异常，不可跨盘符
+os.replace(old,new) #同上改名/移动，但目标存在则覆盖，不跨盘
+
+os.isdir(path) # 判断path是否为文件夹
+os.isfile(path) # 判断path是否为文件
+os.exists(&quot;text.txt&quot;) # 判断具体路径  或文件是否存在，返回布尔值，填绝对/相对路径和文件名
+os.listdir(path) # 返回path目录下的文件和列表，列表形式，填空则为当前目录
+
+os.system(&quot;D:\PyCharm\music\yuri.wav&quot;) # 使用系统软件打开各种文件
+os.system('D:/BBC-an-Zhuang/RA2/RUN.bat') # 打开BAT文件-注意反斜杠/除号
+os.startfile(r&quot;C:\install\文件.exe&quot;)  # 打开程序、.py和文件等，填入绝对路径，加r不用转义\
+</code></pre>
+<h2 id="玩家输入input请输入">玩家输入=input('请输入...')</h2>
+<pre><code class="language-python">玩家输入 = input('请输入...')
+if 玩家输入 != '':
+    break # 当玩家没有输入内容时，按了回车，则传进参数为空，实现任意按键结束
+</code></pre>
+<h2 id="pyautogui库常用命令-链接脚本之家文章链接">Pyautogui库常用命令 <a href="https://blog.csdn.net/hange521/article/details/105184541/">【链接】</a>，<a href="https://www.jb51.net/article/183926.htm">【脚本之家文章链接】</a></h2>
+<pre><code class="language-python"># 基础命令
+pyautogui.PAUSE=1 # pyautogui相关的命令延迟1秒，不建议使用
+pyautogui.FAILSAFE=True # 启用防故障
+
+pyautogui.onScreen(x, y) # 判断(x,y)是否在屏幕上，返回结果为布尔值，真假
+
+width, height = pyautogui.size() # 屏幕的宽度和高度
+print(width, height)
+pyautogui.moveTo(width/2,height/2) # 移动鼠标至屏幕中间
+
+</code></pre>
+<ul>
+<li>
+<h3 id="鼠标命令">鼠标命令：</h3>
+</li>
+</ul>
+<pre><code class="language-python">pyautogui.click() # .click鼠标单击 .doubleClick双击 .rightClick右击
+pyautogui.click(x=100, y=200, duration=2)  # duration=2 移动周期2秒
+pyautogui.doubleClick()  # 鼠标当前位置左击两下-双击
+
+pyautogui.moveTo(x,y)  # 移动鼠标至该坐标
+pyautogui.moveTo(x,y,duration=1)  # 移动鼠标过程中，周期为1秒
+# 移动鼠标的命令都可以使用移动时间周期命令，模拟线性移动，非瞬间移动
+pyautogui.moveRel(100,50) # 相对移动
+now_pos=pyautogui.position() # 获取记录鼠标当前位置
+
+pyautogui.mouseDown()
+pyautogui.mouseUp()  # 【按下 / 松开】鼠标左键
+
+</code></pre>
+<ul>
+<li>
+<h3 id="键盘命令">键盘命令：</h3>
+</li>
+</ul>
+<pre><code class="language-python">pyautogui.typewrite('Hello world!') # 输入Hello world!字符串
+pyautogui.typewrite('Hello world!', interval=0.1) #输入间隔x秒,限英文+符号,模拟键盘
+pyautogui.press('enter') # 按下并松开，可设置多次和间隔，例(&quot;esc&quot;,5,0.2)按5次隔0.2
+pyautogui.press(['left', 'left', 'left', 'left']) # 按下并松开（轻敲）四下左方向键
+
+pyautogui.keyDown('shift') # 按下。这里可用于多键组合，或连续组合键
+pyautogui.press('4')
+pyautogui.keyUp('shift') # 抬起，组合键：输出 $ 符号的按键
+pyautogui.hotkey('ctrl', 'v') # 组合按键（Ctrl+V）粘贴功能，按下并松开'ctrl'和'v'按键
+
+</code></pre>
+<ul>
+<li>
+<h3 id="找色">找色</h3>
+</li>
+</ul>
+<pre><code class="language-python">变量名 = pyautogui.screenshot().getpixel((x,y)) # 传入坐标为元组
+if 变量名 == (255,255,255): # 得到的RGB 颜色也是元组
+    print(&quot;找到色了&quot;)
+
+pyautogui.locateOnScreen('Part.png', region=(0, 0, 600, 800))  # region：缩小查找区域，可提升找图速度 (已忘记-待定)
+</code></pre>
+<ul>
+<li>
+<h3 id="弹窗">弹窗</h3>
+</li>
+</ul>
+<pre><code class="language-python">pyautogui.alert(text='⚠️这是一段警告!!!!!!', title='alert 测试', button='OK')
+</code></pre>
+<h3 id="keyboard">keyboard</h3>
+<p><a href="https://coco56.blog.csdn.net/article/details/107847467">键盘监听等待按键</a><br>
+<a href="https://blog.csdn.net/weixin_51802807/article/details/121179861">按键说明</a></p>
+<pre><code class="language-python">keyboard.type_string('Hello, World!')  #输入字符
+keyboard.tap_key('H') 						# 点击H键
+keyboard.tap_key('H', n=2, interval=5) 		# 点击H键2次，每次间隔5秒
+keyboard.tap_key(keyboard.numpad_keys[5])   # 点击小键盘5
+keyboard.tap_key(keyboard.function_keys[5]) # 点击功能键F5
+
+keyboard.press_key(keyboard.alt_key)   # 按住Alt键
+keyboard.tap_key(keyboard.tab_key) 	   # 点击Tab键
+keyboard.release_key(keyboard.alt_key) # 松开Alt键，组合键同时按 Alt + Tab
+
+</code></pre>
+<h4 id="其它键盘按键参考小鹏同学公号链接">【其它键盘按键参考，小鹏同学】<a href="https://mp.weixin.qq.com/s/s2cDsD0f-orJpydYB_sHXg">公号链接</a></h4>
+<hr>
+<h3 id="pygame-键盘按键事件_-参考链接">pygame 键盘按键事件_ <a href="https://www.it610.com/article/1280841738579099648.htm">参考链接</a></h3>
+<pre><code class="language-python"># 获取事件，比如按键等
+for event in pygame.event.get():
+    # 判断是否是点击了退出按钮
+    if event.type == QUIT:
+        print(&quot;exit&quot;)
+        exit()
+    # 判断是否是按下了键
+    elif event.type == KEYDOWN:
+        # 检测按键是否是a或者left
+        if event.key == K_a or event.key == K_LEFT:
+            print('left')
+        # 检测按键是否是d或者right
+        elif event.key == K_d or event.key == K_RIGHT:
+            print('right')
+        # 检测按键是否是w或者up
+        elif event.key == K_w or event.key == K_UP:
+            print(&quot;up&quot;)
+        # 检测按键是否是s或者down
+        elif event.key == K_s or event.key == K_DOWN:
+            print(&quot;down&quot;)
+        # 检测按键是否是空格键
+        elif event.key == K_SPACE:
+            print('space')
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://supermoon-plus.github.io/tag/6vwmbdhjl/" class="tag">
+                    code
+                  </a>
+                
+                  <a href="https://supermoon-plus.github.io/tag/c1GkpXjiw/" class="tag">
+                    Python
+                  </a>
+                
+                  <a href="https://supermoon-plus.github.io/tag/VRUljCMyxJ/" class="tag">
+                    note
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://supermoon-plus.github.io/post/kai-yuan-xiang-mu-suan-fa/">
+                  <h3 class="post-title">
+                    开源项目 - 算法
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
